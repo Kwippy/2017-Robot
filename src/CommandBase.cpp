@@ -9,8 +9,7 @@ OI* CommandBase::oi = NULL;
 CommandBase::CommandBase(char const *name) :
 		Command(name)
 {
-	//Hi Ben
-	//Hi
+
 }
 
 CommandBase::CommandBase() :
