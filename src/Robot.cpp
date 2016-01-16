@@ -2,7 +2,9 @@
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
-
+#include "WPILib.h"
+#include "Commands/Command.h"
+#include "Commands/ExampleCommand.h"
 class Robot: public IterativeRobot
 {
 private:
@@ -14,6 +16,17 @@ private:
 		CommandBase::init();
 		autonomousCommand = new ExampleCommand();
 		lw = LiveWindow::GetInstance();
+		//		stopPneumaticsCommand= new cmdStopPneumatics();
+
+				//autonomousCommand= new AutoGrabTurnRZone();
+
+				chooser= new SendableChooser();
+				chooser->AddDefault("Grab Tote Spin Right Move to Auto Zone", new driveForwardAutonomous1());
+				chooser->AddObject("Grab Tote Spin Left Move to Auto Zone", new AutoGrabTurnLZone());
+				chooser->AddObject("Grab Trash Stack Spin Left Move to Auto Zone", new AutoGrabTrashStackTurnLZone());
+				chooser->AddObject("stack all totees", new AutoGrabAllTotes());
+				SmartDashboard::PutData("Autonomous Modes", chooser);
+
 	}
 	
 	void DisabledPeriodic()
@@ -23,8 +36,10 @@ private:
 
 	void AutonomousInit()
 	{
-		if (autonomousCommand != NULL)
-			autonomousCommand->Start();
+			autonomousCommand=(Command *)chooser-> GetSelected();
+
+			if (autonomousCommand != NULL)
+				autonomousCommand->Start();
 	}
 
 	void AutonomousPeriodic()
