@@ -2,29 +2,48 @@
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
-#include "WPILib.h"
-#include "Commands/Command.h"
-#include "Commands/ExampleCommand.h"
+#include "Commands/AutoLowBar.h"
+#include "Commands/AutoPortcullis.h"
+#include "Commands/AutoChevaldeFrise.h"
+#include "Commands/AutoRamparts.h"
+#include "Commands/AutoMoat.h"
+#include "Commands/AutoDrawbridge.h"
+#include "Commands/AutoSallyPort.h"
+#include "Commands/AutoRockWall.h"
+#include "Commands/AutoRoughTerrain.h"
+
+
+
 class Robot: public IterativeRobot
 {
 private:
 	Command *autonomousCommand;
 	LiveWindow *lw;
+	SendableChooser *chooser;
 
 	void RobotInit()
 	{
 		CommandBase::init();
 		autonomousCommand = new ExampleCommand();
 		lw = LiveWindow::GetInstance();
+
+
 		//		stopPneumaticsCommand= new cmdStopPneumatics();
 
 				//autonomousCommand= new AutoGrabTurnRZone();
 
 				chooser= new SendableChooser();
-				chooser->AddDefault("Grab Tote Spin Right Move to Auto Zone", new driveForwardAutonomous1());
-				chooser->AddObject("Grab Tote Spin Left Move to Auto Zone", new AutoGrabTurnLZone());
-				chooser->AddObject("Grab Trash Stack Spin Left Move to Auto Zone", new AutoGrabTrashStackTurnLZone());
-				chooser->AddObject("stack all totees", new AutoGrabAllTotes());
+
+				chooser->AddDefault("Low Bar", new AutoLowBar());
+				chooser->AddObject("Cheval de Frise", new AutoChevaldeFrise());
+				chooser->AddObject("Portcullis", new AutoPortcullis());
+				chooser->AddObject("Ramparts", new AutoRamparts());
+				chooser->AddObject("Moat", new AutoMoat());
+				chooser->AddObject("Drawbridge", new AutoDrawbridge());
+				chooser->AddObject("SallyPort", new AutoSallyPort());
+				chooser->AddObject("RockWall", new AutoRockWall());
+				chooser->AddObject("Rough Terrain", new AutoRoughTerrain());
+
 				SmartDashboard::PutData("Autonomous Modes", chooser);
 
 	}
