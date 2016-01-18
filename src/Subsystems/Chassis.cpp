@@ -11,8 +11,8 @@ Chassis::Chassis() :	Subsystem("Chassis")
 
 //Creating two new instances of motor controllers that dictate each side--------------------------------------------
 
-	LeftTalon = new Talon(FRONT_LEFT_TALON);
-	RightTalon = new Talon(FRONT_RIGHT_TALON);
+	LeftTalon = new Talon(LEFT_TALON);
+	RightTalon = new Talon(RIGHT_TALON);
 
 //Robot drive based on a definition of the motor configuration of each motor controller for the wheels--------------
 
