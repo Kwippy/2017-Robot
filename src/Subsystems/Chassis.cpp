@@ -55,41 +55,25 @@ void Chassis::DriveWithJoystick(Joystick *stickL, Joystick *stickR)
 
 
 
-/*WE MAY LIKELY NEED TO USE SOMETHING SIMILAR TO THIS, JUST WITH TANK INSTEAD OF MECANUM
+//WE MAY LIKELY NEED TO USE SOMETHING SIMILAR TO THIS, JUST WITH TANK INSTEAD OF MECANUM
 
-void Chassis::AutoDrive(float x, float y, float z)
+
+void Chassis::AutoDrive(float left, float right)
 {
-	robotDrive->MecanumDrive_Cartesian(x, y, z, CommandBase::oi->getGyro()->GetAngle());
+	// Purpose:
+	//To drive the Robot in autounomous mode.
+	//Inputs: left,right - takes a floating point value from -1 to 1, with 1 indicating full speed and .5 half speed.
+	robotDrive->TankDrive(left, right);
 }
 
-/*
-void Chassis::DriveForwardAutonomous()
-{
-	//drives the robot forward at half speed
-	robotDrive->MecanumDrive_Cartesian(0, .5, 0, CommandBase::oi->getGyro()->GetAngle());
-}
-void Chassis::DriveBackwardAutonomous()
-{
-	//drives the robot backward at half speed
-	robotDrive->MecanumDrive_Cartesian(0, -.5, 0, CommandBase::oi->getGyro()->GetAngle());
-}
-void Chassis::SlideLeftAutonomous()
-{
-	//slides the robot left at half speed
-	robotDrive->MecanumDrive_Cartesian(-.5, 0, 0, CommandBase::oi->getGyro()->GetAngle());
-}
-void Chassis::SlideRightAutonomous()
-{
-	//slides the robot right at half speed
-	robotDrive->MecanumDrive_Cartesian(.5, 0, 0, CommandBase::oi->getGyro()->GetAngle());
-}
-*/
 
-/*
+
 void Chassis::StopAutonomous()
 {
+
 	//stops the motion of the robot
-	robotDrive->MecanumDrive_Cartesian(0, 0, 0, CommandBase::oi->getGyro()->GetAngle());
+	LeftTalon->Set(0,0);
+	RightTalon->Set(0,0);
 }
 
-*/
+

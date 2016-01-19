@@ -20,8 +20,8 @@ public:
 	Chassis();
 	void InitDefaultCommand();
 	void DriveWithJoystick(Joystick *stickL, Joystick *stickR);
-	//void AutoDrive(float x, float y, float z);
-	//void StopAutonomous();
+	void AutoDrive(float left, float right);
+	void StopAutonomous();
 };
 
 #endif
