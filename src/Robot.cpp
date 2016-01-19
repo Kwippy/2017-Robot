@@ -2,18 +2,50 @@
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
+#include "Commands/AutoLowBar.h"
+#include "Commands/AutoPortcullis.h"
+#include "Commands/AutoChevaldeFrise.h"
+#include "Commands/AutoRamparts.h"
+#include "Commands/AutoMoat.h"
+#include "Commands/AutoDrawbridge.h"
+#include "Commands/AutoSallyPort.h"
+#include "Commands/AutoRockWall.h"
+#include "Commands/AutoRoughTerrain.h"
+
+
 
 class Robot: public IterativeRobot
 {
 private:
 	Command *autonomousCommand;
 	LiveWindow *lw;
+	SendableChooser *chooser;
 
 	void RobotInit()
 	{
 		CommandBase::init();
 		autonomousCommand = new ExampleCommand();
 		lw = LiveWindow::GetInstance();
+
+
+		//		stopPneumaticsCommand= new cmdStopPneumatics();
+
+				//autonomousCommand= new AutoGrabTurnRZone();
+
+				chooser= new SendableChooser();
+
+				chooser->AddDefault("Low Bar", new AutoLowBar());
+				chooser->AddObject("Cheval de Frise", new AutoChevaldeFrise());
+				chooser->AddObject("Portcullis", new AutoPortcullis());
+				chooser->AddObject("Ramparts", new AutoRamparts());
+				chooser->AddObject("Moat", new AutoMoat());
+				chooser->AddObject("Drawbridge", new AutoDrawbridge());
+				chooser->AddObject("SallyPort", new AutoSallyPort());
+				chooser->AddObject("RockWall", new AutoRockWall());
+				chooser->AddObject("Rough Terrain", new AutoRoughTerrain());
+
+				SmartDashboard::PutData("Autonomous Modes", chooser);
+
 	}
 	
 	void DisabledPeriodic()
@@ -23,8 +55,10 @@ private:
 
 	void AutonomousInit()
 	{
-		if (autonomousCommand != NULL)
-			autonomousCommand->Start();
+			autonomousCommand=(Command *)chooser-> GetSelected();
+
+			if (autonomousCommand != NULL)
+				autonomousCommand->Start();
 	}
 
 	void AutonomousPeriodic()

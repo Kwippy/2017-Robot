@@ -4,6 +4,8 @@
 #include <string>
 #include "Commands/Command.h"
 #include "Subsystems/ExampleSubsystem.h"
+#include "Subsystems/DataDisplay.h"
+#include "Subsystems/Chassis.h"
 #include "OI.h"
 #include "WPILib.h"
 
@@ -12,15 +14,25 @@
  * CommandBase stores creates and stores each control system. To access a
  * subsystem elsewhere in your code in your code use CommandBase.examplesubsystem
  */
+
+
 class CommandBase: public Command
 {
 public:
 	CommandBase(char const *name);
 	CommandBase();
 	static void init();
-	// Create a single static instance of all of your subsystems
+
+
+// Create a single static instance of all of your subsystems---------------------
+
 	static ExampleSubsystem *examplesubsystem;
 	static OI *oi;
+	static Chassis *tankChassis;
+	static DataDisplay *driverDisplay;
+	static SendableChooser *chooser;
+
+
 };
 
 #endif

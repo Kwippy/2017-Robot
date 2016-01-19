@@ -7,8 +7,29 @@ class OI
 {
 private:
 
+	Joystick *driveStickR, *driveStickL,*xboxController;
+
 public:
 	OI();
+
+//Sensors------------------------------------------------------
+
+	Gyro* getGyro();
+	Encoder *LeftEncoder, *RightEncoder, *getLeftEncoder(), *getRightEncoder();
+
+//Right JoyStick-----------------------------------------------
+
+	Joystick* getDriveStickR();
+
+//Left Joystick------------------------------------------------
+
+	Joystick* getDriveStickL();
+
+//XBOX Controller----------------------------------------------
+
+	Joystick* getControllerXbox();
+
+
 };
 
 #endif
