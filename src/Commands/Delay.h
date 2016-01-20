@@ -1,13 +1,13 @@
-#ifndef AutoMoat_H
-#define AutoMoat_H
+#ifndef Delay_H
+#define Delay_H
 
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class AutoMoat: public CommandBase
+class Delay: public CommandBase
 {
 public:
-	AutoMoat();
+	Delay();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

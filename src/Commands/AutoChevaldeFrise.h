@@ -1,18 +1,13 @@
 #ifndef AutoChevaldeFrise_H
 #define AutoChevaldeFrise_H
 
-#include "../CommandBase.h"
+#include "Commands/CommandGroup.h"
 #include "WPILib.h"
 
-class AutoChevaldeFrise: public CommandBase
+class AutoChevaldeFrise: public CommandGroup
 {
 public:
 	AutoChevaldeFrise();
-	void Initialize();
-	void Execute();
-	bool IsFinished();
-	void End();
-	void Interrupted();
 };
 
 #endif

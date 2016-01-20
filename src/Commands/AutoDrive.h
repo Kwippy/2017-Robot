@@ -1,13 +1,15 @@
-#ifndef AutoPortcullis_H
-#define AutoPortcullis_H
+#ifndef AutoDrive_H
+#define AutoDrive_H
 
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class AutoPortcullis: public CommandBase
+class AutoDrive: public CommandBase
 {
+private:
+	float distance;
 public:
-	AutoPortcullis();
+	AutoDrive(float d);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
