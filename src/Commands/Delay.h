@@ -6,8 +6,12 @@
 
 class Delay: public CommandBase
 {
+private:
+	float delayTime;
+	Timer *timer;
+
 public:
-	Delay();
+	Delay(float time);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
