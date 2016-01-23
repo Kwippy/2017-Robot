@@ -3,7 +3,7 @@
 #include "Commands/Scheduler.h"
 #include "Subsystems/Chassis.h"
 #include "Subsystems/DataDisplay.h"
-
+#include "Subsystems/Shooter.h"
 
 
 // Initialize a single static instance of all of your subsystems to NULL----------------------
@@ -13,6 +13,8 @@ OI* CommandBase::oi = NULL;
 Chassis* CommandBase::tankChassis = NULL;
 DataDisplay* CommandBase::driverDisplay = NULL;
 SendableChooser* CommandBase::chooser= NULL;
+Shooter* CommandBase::ballShooter=NULL;
+
 
 CommandBase::CommandBase(char const *name) :
 		Command(name)
@@ -34,4 +36,5 @@ void CommandBase::init()
 	oi = new OI();
 	tankChassis = new Chassis();
 	driverDisplay = new DataDisplay();
+	ballShooter = new Shooter();
 }

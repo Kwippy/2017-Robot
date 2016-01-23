@@ -6,6 +6,7 @@
 #include "Subsystems/ExampleSubsystem.h"
 #include "Subsystems/DataDisplay.h"
 #include "Subsystems/Chassis.h"
+#include "Subsystems/Shooter.h"
 #include "OI.h"
 #include "WPILib.h"
 
@@ -31,6 +32,7 @@ public:
 	static Chassis *tankChassis;
 	static DataDisplay *driverDisplay;
 	static SendableChooser *chooser;
+	static Shooter *ballShooter;
 
 
 };

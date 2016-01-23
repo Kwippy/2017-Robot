@@ -20,7 +20,7 @@ void AutoDrive::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void AutoDrive::Execute()
 {
-	tankChassis->AutoDrive(leftSpeed, rightSpeed);//tells chassis to go forward at half speed
+	tankChassis->AutoDrive(leftSpeed, rightSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()

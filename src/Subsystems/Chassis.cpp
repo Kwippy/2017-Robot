@@ -54,10 +54,6 @@ void Chassis::DriveWithJoystick(Joystick *stickL, Joystick *stickR)
 }
 
 
-
-//WE MAY LIKELY NEED TO USE SOMETHING SIMILAR TO THIS, JUST WITH TANK INSTEAD OF MECANUM
-
-
 void Chassis::AutoDrive(float left, float right)
 {
 	// Purpose:

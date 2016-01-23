@@ -29,6 +29,7 @@ typedef enum
 {
 	LEFT_TALON = 0,
 	RIGHT_TALON,
+	SHOOTER_TALON,
 
 }TALON_CONTROLERS_t;
 
@@ -56,17 +57,17 @@ typedef enum{
 	//the name of each type should follow this format
 //	Joystick(R/L/XBOX)_ButtonName_fButtonFunction - The f is NOT a typo
 
-	R_TRIGGER=1,				//button 1
-	R_THUMB_BUTTON_DOWN, 		//button 2
-	R_THUMB_BUTTON_UP,			//button 3
-	R_THUMB_BUTTON_LEFT,		//button 4
-	R_THUMB_BUTTON_RIGHT,		//button 5
-	R_LEFT_SIDE_UP,				//button 6
-	R_LEFT_SIDE_DOWN,			//button 7
-	R_FRONT_SIDE_LEFT,			//button 8
-	R_FRONT_SIDE_RIGHT,			//button 9
-	R_RIGHT_SIDE_DOWN, 			//button 10
-	R_RIGHT_SIDE_UP,			//button 11
+	R_TRIGGER=1,							//button 1
+	R_THUMB_BUTTON_DOWN_fSHOOTHIGH, 		//button 2
+	R_THUMB_BUTTON_UP,						//button 3
+	R_THUMB_BUTTON_LEFT,					//button 4
+	R_THUMB_BUTTON_RIGHT,					//button 5
+	R_LEFT_SIDE_UP,							//button 6
+	R_LEFT_SIDE_DOWN,						//button 7
+	R_FRONT_SIDE_LEFT,						//button 8
+	R_FRONT_SIDE_RIGHT,						//button 9
+	R_RIGHT_SIDE_DOWN, 						//button 10
+	R_RIGHT_SIDE_UP,						//button 11
 	R_NUM_OF_JOYSTICK_BUTTONS
 
 } JOYSTICK_RIGHT_BUTTONS_t;
@@ -101,7 +102,7 @@ typedef enum{
 	DIO6,
 	DIO7,
 	DIO8,
-	LOADER_FULLY_RETRACT_REED_SWITCH_I,
+	DIO9,
 
 }DIGITAL_IO_T;
 

@@ -17,13 +17,15 @@ public:
 	Gyro* getGyro();
 	Encoder *LeftEncoder, *RightEncoder, *getLeftEncoder(), *getRightEncoder();
 
-//Right JoyStick-----------------------------------------------
-
-	Joystick* getDriveStickR();
-
 //Left Joystick------------------------------------------------
 
 	Joystick* getDriveStickL();
+
+//Right JoyStick-----------------------------------------------
+
+	Joystick* getDriveStickR();
+	JoystickButton *shootHigh;
+
 
 //XBOX Controller----------------------------------------------
 
