@@ -1,6 +1,7 @@
 #include "OI.h"
 #include "RobotMap.h"
 #include <Commands/cmdShootHigh.h>
+#include <Commands/cmdShooterOff.h>
 
 OI::OI()
 {
@@ -39,6 +40,7 @@ OI::OI()
 
 	shootHigh = new JoystickButton(driveStickR, R_THUMB_BUTTON_DOWN_fSHOOTHIGH);
 	shootHigh->WhenPressed(new cmdShootHigh());
+	shootHigh->WhenReleased(new cmdShooterOff());
 
 
 
