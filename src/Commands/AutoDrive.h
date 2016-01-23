@@ -7,9 +7,9 @@
 class AutoDrive: public CommandBase
 {
 private:
-	float distance;
+	float distance, rightSpeed, leftSpeed;
 public:
-	AutoDrive(float d);
+	AutoDrive(float left, float right, float d);
 	void Initialize();
 	void Execute();
 	bool IsFinished();

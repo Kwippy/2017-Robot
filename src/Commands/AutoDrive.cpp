@@ -1,8 +1,11 @@
 #include "AutoDrive.h"
 
-AutoDrive::AutoDrive(float d)
+AutoDrive::AutoDrive(float left, float right, float d)
 {
 	distance=d;
+	leftSpeed=left;
+	rightSpeed=right;
+
 	// Use Requires() here to declare subsystem dependencies
 	Requires(tankChassis);
 
@@ -17,7 +20,7 @@ void AutoDrive::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void AutoDrive::Execute()
 {
-	tankChassis->AutoDrive(0,0);//tells chassis to go forward at half speed
+	tankChassis->AutoDrive(leftSpeed, rightSpeed);//tells chassis to go forward at half speed
 }
 
 // Make this return true when this Command no longer needs to run execute()
