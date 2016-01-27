@@ -24,7 +24,8 @@ public:
 //Right JoyStick-----------------------------------------------
 
 	Joystick* getDriveStickR();
-	JoystickButton *shootHigh;
+//	JoystickButton *shootHigh;
+	JoystickButton *climbHigh;
 
 
 //XBOX Controller----------------------------------------------

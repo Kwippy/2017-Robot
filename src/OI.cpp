@@ -1,7 +1,9 @@
 #include "OI.h"
 #include "RobotMap.h"
-#include <Commands/cmdShootHigh.h>
-#include <Commands/cmdShooterOff.h>
+//#include <Commands/cmdShootHigh.h>
+//#include <Commands/cmdShooterOff.h>
+#include <Commands/cmdClimb.h>
+#include <Commands/cmdClimberOff.h>
 
 OI::OI()
 {
@@ -38,9 +40,14 @@ OI::OI()
 
 	driveStickR = new Joystick(JOYSTICKRIGHT);
 
-	shootHigh = new JoystickButton(driveStickR, R_THUMB_BUTTON_DOWN_fSHOOTHIGH);
-	shootHigh->WhenPressed(new cmdShootHigh());
-	shootHigh->WhenReleased(new cmdShooterOff());
+//	shootHigh = new JoystickButton(driveStickR, );
+//	shootHigh->WhenPressed(new cmdShootHigh());
+//	shootHigh->WhenReleased(new cmdShooterOff());
+
+	climbHigh = new JoystickButton(driveStickR, R_THUMB_BUTTON_DOWN_fCLIMBHIGH);
+	climbHigh->WhenPressed(new cmdClimb());
+	climbHigh->WhenReleased(new cmdClimberOff());
+
 
 
 

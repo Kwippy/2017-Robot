@@ -16,7 +16,7 @@ private:
 public:
 	Shooter();
 	void InitDefaultCommand();
-	void Shoot(float fire);
+	void Shoot(float shootSpeed);
 	void StopShooter();
 };
 

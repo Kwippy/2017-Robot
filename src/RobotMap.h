@@ -61,7 +61,7 @@ typedef enum{
 //	Joystick(R/L/XBOX)_ButtonName_fButtonFunction - The f is NOT a typo
 
 	R_TRIGGER=1,							//button 1
-	R_THUMB_BUTTON_DOWN_fSHOOTHIGH, 		//button 2
+	R_THUMB_BUTTON_DOWN_fCLIMBHIGH, 		//button 2
 	R_THUMB_BUTTON_UP,						//button 3
 	R_THUMB_BUTTON_LEFT,					//button 4
 	R_THUMB_BUTTON_RIGHT,					//button 5

@@ -20,12 +20,12 @@ void Shooter::InitDefaultCommand()
 // here. Call these from Commands.
 
 
-void Shooter::Shoot(float fire)
+void Shooter::Shoot(float shootSpeed)
 {
 	// Purpose:
 	//To shoot the robot at a given fire speed
 	//Inputs: fire - takes a floating point value from -1 to 1, with 1 indicating full speed and .5 half speed.
-	ShooterTalon->Set(fire);
+	ShooterTalon->Set(shootSpeed);
 }
 
 
