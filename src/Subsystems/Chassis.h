@@ -11,7 +11,7 @@ private:
 // It's desirable that everything possible under private except
 // for methods that implement subsystem capabilities
 
-	Talon *LeftTalon, *RightTalon;
+	Talon *FrontLeftTalon, *FrontRightTalon, *BackLeftTalon, *BackRightTalon;
 	RobotDrive *robotDrive;
 	Accelerometer *accel;
 

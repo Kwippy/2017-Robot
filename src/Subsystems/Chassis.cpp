@@ -11,12 +11,14 @@ Chassis::Chassis() :	Subsystem("Chassis")
 
 //Creating two new instances of motor controllers that dictate each side--------------------------------------------
 
-	LeftTalon = new Talon(LEFT_TALON);
-	RightTalon = new Talon(RIGHT_TALON);
+	FrontLeftTalon = new Talon(FRONT_LEFT_TALON);
+	FrontRightTalon = new Talon(FRONT_RIGHT_TALON);
+	BackLeftTalon = new Talon(BACK_LEFT_TALON);
+	BackRightTalon = new Talon(BACK_RIGHT_TALON);
 
 //Robot drive based on a definition of the motor configuration of each motor controller for the wheels--------------
 
-	robotDrive = new RobotDrive(LeftTalon, RightTalon);
+	robotDrive = new RobotDrive(FrontLeftTalon, FrontRightTalon,  BackLeftTalon, BackRightTalon);
 
 
 //Creates a new instance of Accelerometer---------------------------------------------------------------------------
@@ -66,10 +68,11 @@ void Chassis::AutoDrive(float left, float right)
 
 void Chassis::StopAutonomous()
 {
-
 	//stops the motion of the robot
-	LeftTalon->Set(0,0);
-	RightTalon->Set(0,0);
+	FrontLeftTalon->Set(0,0);
+	FrontRightTalon->Set(0,0);
+	BackLeftTalon->Set(0,0);
+	BackRightTalon->Set(0,0);
 }
 
 
