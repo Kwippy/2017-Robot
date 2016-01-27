@@ -7,6 +7,7 @@
 #include "Subsystems/DataDisplay.h"
 #include "Subsystems/Chassis.h"
 #include "Subsystems/Shooter.h"
+#include "Subsystems/Climber.h"
 #include "OI.h"
 #include "WPILib.h"
 
@@ -33,6 +34,7 @@ public:
 	static DataDisplay *driverDisplay;
 	static SendableChooser *chooser;
 	static Shooter *ballShooter;
+	static Climber *robotClimber;
 
 
 };

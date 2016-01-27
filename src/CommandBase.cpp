@@ -14,6 +14,8 @@ Chassis* CommandBase::tankChassis = NULL;
 DataDisplay* CommandBase::driverDisplay = NULL;
 SendableChooser* CommandBase::chooser= NULL;
 Shooter* CommandBase::ballShooter=NULL;
+Climber* CommandBase::robotClimber=NULL;
+
 
 
 CommandBase::CommandBase(char const *name) :
@@ -37,4 +39,5 @@ void CommandBase::init()
 	tankChassis = new Chassis();
 	driverDisplay = new DataDisplay();
 	ballShooter = new Shooter();
+	robotClimber = new Climber();
 }
