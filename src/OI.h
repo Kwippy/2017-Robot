@@ -7,7 +7,7 @@ class OI
 {
 private:
 
-	Joystick *driveStickR, *driveStickL,*xboxController;
+	Joystick *driveStickR, *driveStickL;
 
 public:
 	OI();
@@ -25,7 +25,7 @@ public:
 
 	Joystick* getDriveStickR();
 //	JoystickButton *shootHigh;
-	JoystickButton *climbHigh;
+	JoystickButton *climberExtend, *climberRetract;
 
 
 //XBOX Controller----------------------------------------------

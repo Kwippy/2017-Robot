@@ -23,7 +23,7 @@
 
 #define JOYSTICKLEFT (0)
 #define JOYSTICKRIGHT (1)
-#define XBOXCONTROLLER (2)
+// #define XBOXCONTROLLER (2)
 
 typedef enum
 {
@@ -61,8 +61,8 @@ typedef enum{
 //	Joystick(R/L/XBOX)_ButtonName_fButtonFunction - The f is NOT a typo
 
 	R_TRIGGER=1,							//button 1
-	R_THUMB_BUTTON_DOWN_fCLIMBHIGH, 		//button 2
-	R_THUMB_BUTTON_UP,						//button 3
+	R_THUMB_BUTTON_DOWN_fCLIMBRETRACT, 		//button 2
+	R_THUMB_BUTTON_UP_fCLIMBEXTEND,		//button 3
 	R_THUMB_BUTTON_LEFT,					//button 4
 	R_THUMB_BUTTON_RIGHT,					//button 5
 	R_LEFT_SIDE_UP,							//button 6
@@ -75,6 +75,7 @@ typedef enum{
 
 } JOYSTICK_RIGHT_BUTTONS_t;
 
+/*
 typedef enum{
 //the name of each type should follow this format
 //	Joystick(R/L/XBOX)_ButtonName_fButtonFunction - The f is NOT a typo
@@ -93,6 +94,7 @@ typedef enum{
 
 } XBOX_CONTROLLER_BUTTONS_t;
 
+*/
 
 typedef enum{
 

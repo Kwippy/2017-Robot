@@ -1,9 +1,10 @@
+#include <Commands/cmdClimberExtend.h>
 #include "OI.h"
 #include "RobotMap.h"
 //#include <Commands/cmdShootHigh.h>
 //#include <Commands/cmdShooterOff.h>
-#include <Commands/cmdClimb.h>
 #include <Commands/cmdClimberOff.h>
+#include <Commands/cmdClimberRetract.h>
 
 OI::OI()
 {
@@ -20,7 +21,7 @@ OI::OI()
 
 //XBOX CONTROLLER------------------------------------------
 
-	xboxController= new Joystick(XBOXCONTROLLER);
+//	xboxController= new Joystick(XBOXCONTROLLER);
 
 
 
@@ -44,11 +45,13 @@ OI::OI()
 //	shootHigh->WhenPressed(new cmdShootHigh());
 //	shootHigh->WhenReleased(new cmdShooterOff());
 
-	climbHigh = new JoystickButton(driveStickR, R_THUMB_BUTTON_DOWN_fCLIMBHIGH);
-	climbHigh->WhenPressed(new cmdClimb());
-	climbHigh->WhenReleased(new cmdClimberOff());
+	climberRetract = new JoystickButton(driveStickR, R_THUMB_BUTTON_DOWN_fCLIMBRETRACT);
+	climberRetract->WhenPressed(new cmdClimberRetract());
+	climberRetract->WhenReleased(new cmdClimberOff());
 
-
+	climberExtend = new JoystickButton(driveStickR, R_THUMB_BUTTON_UP_fCLIMBEXTEND);
+	climberExtend->WhenPressed(new cmdClimberExtend());
+	climberExtend->WhenReleased(new cmdClimberOff());
 
 
 
@@ -83,7 +86,9 @@ Joystick* OI::getDriveStickR()
 	return driveStickR;
 }
 
+/*
 Joystick* OI::getControllerXbox()
 {
 	return xboxController;
 }
+*/

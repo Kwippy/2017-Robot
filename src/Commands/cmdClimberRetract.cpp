@@ -1,6 +1,6 @@
-#include "cmdClimb.h"
+#include <Commands/cmdClimberRetract.h>
 
-cmdClimb::cmdClimb()
+cmdClimberRetract::cmdClimberRetract()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
@@ -8,32 +8,32 @@ cmdClimb::cmdClimb()
 }
 
 // Called just before this Command runs the first time
-void cmdClimb::Initialize()
+void cmdClimberRetract::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void cmdClimb::Execute()
+void cmdClimberRetract::Execute()
 {
-	robotClimber->Climb(0.3);
+	robotClimber->Climb(-0.3);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool cmdClimb::IsFinished()
+bool cmdClimberRetract::IsFinished()
 {
 	return true;
 }
 
 // Called once after isFinished returns true
-void cmdClimb::End()
+void cmdClimberRetract::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void cmdClimb::Interrupted()
+void cmdClimberRetract::Interrupted()
 {
 
 }

@@ -4,10 +4,10 @@
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class cmdClimb: public CommandBase
+class cmdClimberExtend: public CommandBase
 {
 public:
-	cmdClimb();
+	cmdClimberExtend();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
