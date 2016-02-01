@@ -8,6 +8,7 @@
 #include "Subsystems/Chassis.h"
 #include "Subsystems/Shooter.h"
 #include "Subsystems/Climber.h"
+#include "Subsystems/AngleShooter.h"
 #include "OI.h"
 #include "WPILib.h"
 
@@ -35,6 +36,7 @@ public:
 	static SendableChooser *chooser;
 	static Shooter *ballShooter;
 	static Climber *robotClimber;
+	static AngleShooter *shootAngle;
 
 
 };

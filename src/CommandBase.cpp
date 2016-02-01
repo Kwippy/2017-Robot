@@ -4,6 +4,7 @@
 #include "Subsystems/Chassis.h"
 #include "Subsystems/DataDisplay.h"
 #include "Subsystems/Shooter.h"
+#include "Subsystems/AngleShooter.h"
 
 
 // Initialize a single static instance of all of your subsystems to NULL----------------------
@@ -15,6 +16,7 @@ DataDisplay* CommandBase::driverDisplay = NULL;
 SendableChooser* CommandBase::chooser= NULL;
 Shooter* CommandBase::ballShooter=NULL;
 Climber* CommandBase::robotClimber=NULL;
+AngleShooter* CommandBase::shootAngle=NULL;
 
 
 
@@ -40,4 +42,5 @@ void CommandBase::init()
 	driverDisplay = new DataDisplay();
 	ballShooter = new Shooter();
 	robotClimber = new Climber();
+	shootAngle = new AngleShooter();
 }

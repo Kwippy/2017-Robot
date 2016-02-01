@@ -6,4 +6,5 @@
 AutoChevaldeFrise::AutoChevaldeFrise()
 {
 	AddSequential (new Delay(1));
+	AddSequential (new AutoDrive(48));
 }
