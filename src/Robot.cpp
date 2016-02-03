@@ -27,6 +27,12 @@ private:
 		autonomousCommand = new ExampleCommand();
 		lw = LiveWindow::GetInstance();
 
+		//		CommandBase::oi->getGyro()->SetSensitivity(.007);//.0125);
+		//		CommandBase::oi->getGyro()->InitGyro();
+		//		CommandBase::oi->getGyro()->Reset(); // Resets the gyro's heading
+
+				CommandBase::oi->getGyro()->SetSensitivity(.007);//.0125);
+				CommandBase::oi->getGyro()->InitGyro();
 
 		//		stopPneumaticsCommand= new cmdStopPneumatics();
 
@@ -55,7 +61,8 @@ private:
 
 	void AutonomousInit()
 	{
-			autonomousCommand=(Command *)chooser-> GetSelected();
+		CommandBase::oi->getGyro()->Reset(); // Resets the gyro's heading
+		autonomousCommand=(Command *)chooser-> GetSelected();
 
 			if (autonomousCommand != NULL)
 				autonomousCommand->Start();

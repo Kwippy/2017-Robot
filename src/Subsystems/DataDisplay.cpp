@@ -24,5 +24,6 @@ void  DataDisplay::DisplayAll()
 
 	SmartDashboard::PutNumber("Left Encoder Speed:", CommandBase::oi->getLeftEncoder()->GetRate());
 	SmartDashboard::PutNumber("Right Encoder Speed:", CommandBase::oi->getRightEncoder()->GetRate());
+	SmartDashboard::PutNumber("Gyro: ", CommandBase::oi->getGyro()->GetAngle());
 
 }

@@ -8,6 +8,7 @@ class OI
 private:
 
 	Joystick *driveStickR, *driveStickL;
+	Gyro *gyro;
 
 public:
 	OI();
@@ -26,6 +27,7 @@ public:
 	Joystick* getDriveStickR();
 //	JoystickButton *shootHigh;
 	JoystickButton *climberExtend, *climberRetract;
+	JoystickButton *gyroReset;
 
 
 //XBOX Controller----------------------------------------------

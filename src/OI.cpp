@@ -5,11 +5,16 @@
 //#include <Commands/cmdShooterOff.h>
 #include <Commands/cmdClimberOff.h>
 #include <Commands/cmdClimberRetract.h>
+#include <Commands/cmdResetGyro.h>
 
 OI::OI()
 {
 
 // Process operator interface input here.
+
+//	Sensors
+//creates a new instance of Gyro
+	gyro = new Gyro(0);
 
 //ENCODERS-------------------------------------------------
 
@@ -53,12 +58,19 @@ OI::OI()
 	climberExtend->WhenPressed(new cmdClimberExtend());
 	climberExtend->WhenReleased(new cmdClimberOff());
 
+	gyroReset= new JoystickButton(driveStickR, R_LEFT_SIDE_UP_fRESET_GYRO);
+	gyroReset->WhenPressed(new cmdResetGyro());
+
 
 
 
 }
 
 //Will return the location of the data of the user input at the left joystick
+Gyro* OI::getGyro()
+{
+	return gyro;
+}
 
 
 //ENCODERS--------------------------------------

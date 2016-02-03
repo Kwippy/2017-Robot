@@ -66,7 +66,7 @@ typedef enum{
 	R_THUMB_BUTTON_UP_fCLIMBEXTEND,		//button 3
 	R_THUMB_BUTTON_LEFT,					//button 4
 	R_THUMB_BUTTON_RIGHT,					//button 5
-	R_LEFT_SIDE_UP,							//button 6
+	R_LEFT_SIDE_UP_fRESET_GYRO,							//button 6
 	R_LEFT_SIDE_DOWN,						//button 7
 	R_FRONT_SIDE_LEFT,						//button 8
 	R_FRONT_SIDE_RIGHT,						//button 9
