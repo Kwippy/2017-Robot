@@ -3,8 +3,9 @@
 #include "../Robotmap.h"
 #include "Commands/AutoDrive.h"
 
+
 AutoChevaldeFrise::AutoChevaldeFrise()
 {
 	AddSequential (new Delay(1));
-	AddSequential (new AutoDrive(48));
+	AddSequential (new AutoDrive(.5,.5, 48));
 }
