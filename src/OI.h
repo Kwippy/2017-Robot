@@ -8,7 +8,7 @@ class OI
 private:
 
 	Joystick *driveStickR, *driveStickL;
-	Gyro *gyro;
+	ADXRS450_Gyro *gyro;
 
 public:
 	OI();

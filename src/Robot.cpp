@@ -31,14 +31,14 @@ private:
 		//		CommandBase::oi->getGyro()->InitGyro();
 		//		CommandBase::oi->getGyro()->Reset(); // Resets the gyro's heading
 
-				CommandBase::oi->getGyro()->SetSensitivity(.007);//.0125);
-				CommandBase::oi->getGyro()->InitGyro();
+				CommandBase::oi->getGyro()->Calibrate();
 
 		//		stopPneumaticsCommand= new cmdStopPneumatics();
 
 				//autonomousCommand= new AutoGrabTurnRZone();
 
 				chooser= new SendableChooser();
+
 
 				chooser->AddDefault("Low Bar", new AutoLowBar());
 				chooser->AddObject("Cheval de Frise", new AutoChevaldeFrise());
@@ -49,6 +49,7 @@ private:
 				chooser->AddObject("SallyPort", new AutoSallyPort());
 				chooser->AddObject("RockWall", new AutoRockWall());
 				chooser->AddObject("Rough Terrain", new AutoRoughTerrain());
+
 
 				SmartDashboard::PutData("Autonomous Modes", chooser);
 

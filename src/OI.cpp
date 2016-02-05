@@ -14,7 +14,7 @@ OI::OI()
 
 //	Sensors
 //creates a new instance of Gyro
-	gyro = new Gyro(0);
+	gyro = new ADXRS450_Gyro();
 
 //ENCODERS-------------------------------------------------
 
