@@ -16,7 +16,7 @@ public:
 //Sensors------------------------------------------------------
 
 	Gyro* getGyro();
-	Encoder *LeftEncoder, *RightEncoder, *getLeftEncoder(), *getRightEncoder();
+	Encoder *LeftEncoder, *RightEncoder, *AngleShootEncoder, *getLeftEncoder(), *getRightEncoder(), *getAngleShootEncoder();
 
 //Left Joystick------------------------------------------------
 

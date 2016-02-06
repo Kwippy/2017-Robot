@@ -22,6 +22,8 @@ OI::OI()
 	LeftEncoder->SetDistancePerPulse(0.075);
 	RightEncoder= new Encoder(0,1,true);
 	RightEncoder->SetDistancePerPulse(0.075);
+	AngleShootEncoder = new Encoder(4,5, true);
+	AngleShootEncoder->SetDistancePerPulse(0.075);
 
 
 //XBOX CONTROLLER------------------------------------------
@@ -83,6 +85,11 @@ Encoder* OI::getRightEncoder()
 {
 	return RightEncoder;
 }
+Encoder* OI::getAngleShootEncoder()
+{
+	return AngleShootEncoder;
+}
+
 
 
 

@@ -1,0 +1,51 @@
+#include "cmdVisionAngleShooter.h"
+
+cmdVisionAngleShooter::cmdVisionAngleShooter(float angleSpeed, float angleShoot)
+{
+	// Use Requires() here to declare subsystem dependencies
+	// eg. Requires(chassis);
+	angleShooterSpeed = angleSpeed;
+	trajectoryAngle = angleShoot;
+
+	Requires(shootAngle);
+}
+
+// Called just before this Command runs the first time
+void cmdVisionAngleShooter::Initialize()
+{
+
+}
+
+// Called repeatedly when this Command is scheduled to run
+void cmdVisionAngleShooter::Execute()
+{
+	shootAngle->AngleShoot(angleShooterSpeed);
+
+}
+
+// Make this return true when this Command no longer needs to run execute()
+bool cmdVisionAngleShooter::IsFinished()
+{
+	bool retVal= false;
+		if(trajectoryAngle<=oi->getAngleShootEncoder()->GetDistance())
+		{
+			retVal=true;
+		}
+		else
+		{
+			retVal=false;
+		}
+}
+
+// Called once after isFinished returns true
+void cmdVisionAngleShooter::End()
+{
+
+}
+
+// Called when another command which requires one or more of the same
+// subsystems is scheduled to run
+void cmdVisionAngleShooter::Interrupted()
+{
+
+}
