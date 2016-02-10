@@ -1,8 +1,6 @@
-#include "cmdVisionProcessing.h"
-#include "../CommandBase.h"
-#include "WPILib.h"
+#include "cmdgrpVisionProcessing.h"
 
-cmdVisionProcessing::cmdVisionProcessing()
+cmdgrpVisionProcessing::cmdgrpVisionProcessing()
 {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());

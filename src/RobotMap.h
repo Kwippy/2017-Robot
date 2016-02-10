@@ -31,9 +31,10 @@ typedef enum
 	FRONT_RIGHT_TALON,
 	BACK_LEFT_TALON,
 	BACK_RIGHT_TALON,
+	LEFT_SHOOTER_TALON,
+	RIGHT_SHOOTER_TALON,
+	ANGLE_SHOOTER_TALON,
 	CLIMBER_TALON,
-	SHOOTER_TALON,
-	ANGLE_SHOOTER_TALON
 
 }TALON_CONTROLERS_t;
 
@@ -42,17 +43,17 @@ typedef enum{
 	//the name of each type should follow this format
 //	Joystick(R/L/XBOX)_ButtonName_fButtonFunction - The f is NOT a typo
 
-	L_TRIGGER=1,				//button 1
-	L_THUMB_BUTTON_DOWN, 		//button 2
-	L_THUMB_BUTTON_UP,			//button 3
-	L_THUMB_BUTTON_LEFT,		//button 4
-	L_THUMB_BUTTON_RIGHT,		//button 5
-	L_LEFT_SIDE_UP,				//button 6
-	L_LEFT_SIDE_DOWN,			//button 7
-	L_FRONT_SIDE_LEFT,			//button 8
-	L_FRONT_SIDE_RIGHT,			//button 9
-	L_RIGHT_SIDE_DOWN, 			//button 10
-	L_RIGHT_SIDE_UP,			//button 11
+	L_TRIGGER=1,						//button 1
+	L_THUMB_BUTTON_DOWN_fLOADBALL, 		//button 2
+	L_THUMB_BUTTON_UP_fSHOOTBALL,		//button 3
+	L_THUMB_BUTTON_LEFT_fFEEDBALL,		//button 4
+	L_THUMB_BUTTON_RIGHT_fSHOOTHIGH,	//button 5
+	L_LEFT_SIDE_UP,						//button 6
+	L_LEFT_SIDE_DOWN,					//button 7
+	L_FRONT_SIDE_LEFT,					//button 8
+	L_FRONT_SIDE_RIGHT,					//button 9
+	L_RIGHT_SIDE_DOWN, 					//button 10
+	L_RIGHT_SIDE_UP,					//button 11
 	L_NUM_OF_JOYSTICK_BUTTONS
 
 } JOYSTICK_LEFT_BUTTONS_t;
@@ -65,7 +66,7 @@ typedef enum{
 	R_THUMB_BUTTON_DOWN_fCLIMBRETRACT, 		//button 2
 	R_THUMB_BUTTON_UP_fCLIMBEXTEND,		//button 3
 	R_THUMB_BUTTON_LEFT,					//button 4
-	R_THUMB_BUTTON_RIGHT,					//button 5
+	R_THUMB_BUTTON_RIGHT_f,					//button 5
 	R_LEFT_SIDE_UP_fRESET_GYRO,							//button 6
 	R_LEFT_SIDE_DOWN,						//button 7
 	R_FRONT_SIDE_LEFT,						//button 8

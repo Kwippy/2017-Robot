@@ -1,11 +1,12 @@
 #include <Commands/cmdClimberExtend.h>
 #include "OI.h"
 #include "RobotMap.h"
-//#include <Commands/cmdShootHigh.h>
-//#include <Commands/cmdShooterOff.h>
+#include <Commands/cmdShootHigh.h>
+#include <Commands/cmdShooterOff.h>
 #include <Commands/cmdClimberOff.h>
 #include <Commands/cmdClimberRetract.h>
 #include <Commands/cmdResetGyro.h>
+#include <Commands/cmdFeedBall.h>
 
 OI::OI()
 {
@@ -48,9 +49,19 @@ OI::OI()
 
 	driveStickR = new Joystick(JOYSTICKRIGHT);
 
-//	shootHigh = new JoystickButton(driveStickR, );
-//	shootHigh->WhenPressed(new cmdShootHigh());
-//	shootHigh->WhenReleased(new cmdShooterOff());
+	feedBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_LEFT_fFEEDBALL);
+	feedBall->WhenPressed(new cmdFeedBall());
+	feedBall->WhenReleased(new cmdShooterOff());
+
+	shootHigh = new JoystickButton(driveStickL, L_THUMB_BUTTON_RIGHT_fSHOOTHIGH);
+	shootHigh->WhenPressed(new cmdShootHigh());
+	shootHigh->WhenReleased(new cmdShooterOff());
+
+	loadBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_DOWN_fLOADBALL);
+	loadBall->WhenPressed(new cmdLoadBallServo());
+
+	shootBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_UP_fSHOOTBALL);
+	shootBall->WhenPressed(new cmdgrpLoadandShoot());
 
 	climberRetract = new JoystickButton(driveStickR, R_THUMB_BUTTON_DOWN_fCLIMBRETRACT);
 	climberRetract->WhenPressed(new cmdClimberRetract());
@@ -68,7 +79,7 @@ OI::OI()
 
 }
 
-//Will return the location of the data of the user input at the left joystick
+
 Gyro* OI::getGyro()
 {
 	return gyro;

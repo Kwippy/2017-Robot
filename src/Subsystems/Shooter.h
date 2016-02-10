@@ -10,14 +10,17 @@ private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 
-	Talon *ShooterTalon;
+	Talon *LeftShooterTalon, *RightShooterTalon;
+	Servo *LoaderServo;
 
 
 public:
 	Shooter();
 	void InitDefaultCommand();
 	void Shoot(float shootSpeed);
+	void Feed();
 	void StopShooter();
+	void LoadBall();
 };
 
 #endif

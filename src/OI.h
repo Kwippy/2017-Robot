@@ -21,11 +21,12 @@ public:
 //Left Joystick------------------------------------------------
 
 	Joystick* getDriveStickL();
+	JoystickButton *feedBall, *loadBall, *shootBall;
 
 //Right JoyStick-----------------------------------------------
 
 	Joystick* getDriveStickR();
-//	JoystickButton *shootHigh;
+	JoystickButton *shootHigh;
 	JoystickButton *climberExtend, *climberRetract;
 	JoystickButton *gyroReset;
 
