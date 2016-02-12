@@ -16,12 +16,12 @@ public:
 //Sensors------------------------------------------------------
 
 	Gyro* getGyro();
-	Encoder *LeftEncoder, *RightEncoder, *AngleShootEncoder, *getLeftEncoder(), *getRightEncoder(), *getAngleShootEncoder();
-
+	Encoder *LeftEncoder, *RightEncoder, *getLeftEncoder(), *getRightEncoder();
+	AnalogInput *AngleShootEncoder, *getAngleShootEncoder();
 //Left Joystick------------------------------------------------
 
 	Joystick* getDriveStickL();
-	JoystickButton *feedBall, *loadBall, *shootBall;
+	JoystickButton *feedBall, *loadBall, *shootBall, *testServoUp, *testServoDown;
 
 //Right JoyStick-----------------------------------------------
 

@@ -1,6 +1,6 @@
-#include "cmdFeedBall.h"
+#include "cmdTestServoUp.h"
 
-cmdFeedBall::cmdFeedBall()
+cmdTestServoUp::cmdTestServoUp()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
@@ -8,32 +8,32 @@ cmdFeedBall::cmdFeedBall()
 }
 
 // Called just before this Command runs the first time
-void cmdFeedBall::Initialize()
+void cmdTestServoUp::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void cmdFeedBall::Execute()
+void cmdTestServoUp::Execute()
 {
-	ballShooter->Shoot(-0.8);
+	ballShooter->ServoUp();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool cmdFeedBall::IsFinished()
+bool cmdTestServoUp::IsFinished()
 {
 	return true;
 }
 
 // Called once after isFinished returns true
-void cmdFeedBall::End()
+void cmdTestServoUp::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void cmdFeedBall::Interrupted()
+void cmdTestServoUp::Interrupted()
 {
 
 }

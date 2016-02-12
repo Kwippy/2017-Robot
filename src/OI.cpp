@@ -6,7 +6,12 @@
 #include <Commands/cmdClimberOff.h>
 #include <Commands/cmdClimberRetract.h>
 #include <Commands/cmdResetGyro.h>
+#include <Commands/cmdgrpLoadandShoot.h>
 #include <Commands/cmdFeedBall.h>
+#include <Commands/cmdLoadBallServo.h>
+#include <Commands/cmdTestServoUp.h>
+#include <Commands/cmdTestServoDown.h>
+
 
 OI::OI()
 {
@@ -23,8 +28,8 @@ OI::OI()
 	LeftEncoder->SetDistancePerPulse(0.075);
 	RightEncoder= new Encoder(0,1,true);
 	RightEncoder->SetDistancePerPulse(0.075);
-	AngleShootEncoder = new Encoder(4,5, true);
-	AngleShootEncoder->SetDistancePerPulse(0.075);
+	AngleShootEncoder = new AnalogInput(3);
+
 
 
 //XBOX CONTROLLER------------------------------------------
@@ -40,15 +45,6 @@ OI::OI()
 
 	driveStickL = new Joystick(JOYSTICKLEFT);
 
-
-
-
-
-
-//RIGHT JOYSTICK------------------------------------------
-
-	driveStickR = new Joystick(JOYSTICKRIGHT);
-
 	feedBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_LEFT_fFEEDBALL);
 	feedBall->WhenPressed(new cmdFeedBall());
 	feedBall->WhenReleased(new cmdShooterOff());
@@ -60,8 +56,19 @@ OI::OI()
 	loadBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_DOWN_fLOADBALL);
 	loadBall->WhenPressed(new cmdLoadBallServo());
 
+	testServoUp = new JoystickButton(driveStickL, L_LEFT_SIDE_UP_fTESTSERVOUP);
+	testServoUp->WhenPressed(new cmdTestServoUp());
+
+	testServoDown = new JoystickButton(driveStickL, L_LEFT_SIDE_DOWN_fTESTSERVODOWN);
+	testServoDown->WhenPressed(new cmdTestServoDown());
+
 	shootBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_UP_fSHOOTBALL);
 	shootBall->WhenPressed(new cmdgrpLoadandShoot());
+
+
+//RIGHT JOYSTICK------------------------------------------
+
+	driveStickR = new Joystick(JOYSTICKRIGHT);
 
 	climberRetract = new JoystickButton(driveStickR, R_THUMB_BUTTON_DOWN_fCLIMBRETRACT);
 	climberRetract->WhenPressed(new cmdClimberRetract());
@@ -96,7 +103,7 @@ Encoder* OI::getRightEncoder()
 {
 	return RightEncoder;
 }
-Encoder* OI::getAngleShootEncoder()
+AnalogInput* OI::getAngleShootEncoder()
 {
 	return AngleShootEncoder;
 }

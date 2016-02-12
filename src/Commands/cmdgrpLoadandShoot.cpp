@@ -9,8 +9,10 @@ cmdgrpLoadandShoot::cmdgrpLoadandShoot()
 {
 
 	AddSequential (new cmdShootHigh());
-	AddSequential (new Delay(5));
-	AddSequential (new cmdLoadBallServo());
 	AddSequential (new Delay(3));
+	AddSequential (new cmdLoadBallServo());
+	AddSequential (new Delay(1));
 	AddSequential (new cmdShooterOff());
+	AddSequential (new cmdLoadBallServo());
+
 }

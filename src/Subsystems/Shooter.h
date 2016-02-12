@@ -18,9 +18,12 @@ public:
 	Shooter();
 	void InitDefaultCommand();
 	void Shoot(float shootSpeed);
-	void Feed();
 	void StopShooter();
 	void LoadBall();
+	void ServoUp();
+	void ServoDown();
+	Servo* getLoaderServo();
+
 };
 
 #endif

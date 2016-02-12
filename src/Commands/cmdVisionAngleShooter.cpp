@@ -27,7 +27,7 @@ void cmdVisionAngleShooter::Execute()
 bool cmdVisionAngleShooter::IsFinished()
 {
 	bool retVal= false;
-		if(trajectoryAngle<=oi->getAngleShootEncoder()->GetDistance())
+		if(trajectoryAngle<=oi->getAngleShootEncoder()->GetVoltage())
 		{
 			retVal=true;
 		}

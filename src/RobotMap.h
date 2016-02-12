@@ -48,8 +48,8 @@ typedef enum{
 	L_THUMB_BUTTON_UP_fSHOOTBALL,		//button 3
 	L_THUMB_BUTTON_LEFT_fFEEDBALL,		//button 4
 	L_THUMB_BUTTON_RIGHT_fSHOOTHIGH,	//button 5
-	L_LEFT_SIDE_UP,						//button 6
-	L_LEFT_SIDE_DOWN,					//button 7
+	L_LEFT_SIDE_UP_fTESTSERVOUP,						//button 6
+	L_LEFT_SIDE_DOWN_fTESTSERVODOWN,					//button 7
 	L_FRONT_SIDE_LEFT,					//button 8
 	L_FRONT_SIDE_RIGHT,					//button 9
 	L_RIGHT_SIDE_DOWN, 					//button 10
