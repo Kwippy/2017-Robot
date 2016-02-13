@@ -29,5 +29,6 @@ void  DataDisplay::DisplayAll()
 	SmartDashboard::PutNumber("Gyro: ", CommandBase::oi->getGyro()->GetAngle());
 	SmartDashboard::PutNumber("Servo Position:", CommandBase::ballShooter->getLoaderServo()->Get());
 	SmartDashboard::PutNumber("Angle Encoder:", AngleShootEncoderDegrees);
+	SmartDashboard::PutBoolean("Text File Error", CommandBase::oi->setVisionNumbers());
 
 }

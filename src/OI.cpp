@@ -11,6 +11,10 @@
 #include <Commands/cmdLoadBallServo.h>
 #include <Commands/cmdTestServoUp.h>
 #include <Commands/cmdTestServoDown.h>
+#include <iostream>
+#include <fstream>
+
+using namespace std;
 
 
 OI::OI()
@@ -106,6 +110,29 @@ Encoder* OI::getRightEncoder()
 AnalogInput* OI::getAngleShootEncoder()
 {
 	return AngleShootEncoder;
+}
+bool OI::setVisionNumbers()
+{
+	string line;
+	string line2;
+	ifstream myfile;
+	myfile.open("FILENAMEHERE.txt");
+	if(myfile.is_open())
+	{
+		float VisionAngle=0;
+		float VisionDistance=0;
+		getline(myfile, line);
+		VisionAngle=stof(line);
+		getline(myfile, line2);
+		VisionDistance=stof(line2);
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+	myfile.close();
 }
 
 

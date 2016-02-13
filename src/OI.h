@@ -18,6 +18,7 @@ public:
 	Gyro* getGyro();
 	Encoder *LeftEncoder, *RightEncoder, *getLeftEncoder(), *getRightEncoder();
 	AnalogInput *AngleShootEncoder, *getAngleShootEncoder();
+	bool setVisionNumbers;
 //Left Joystick------------------------------------------------
 
 	Joystick* getDriveStickL();
