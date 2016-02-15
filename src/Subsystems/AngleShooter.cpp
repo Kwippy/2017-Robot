@@ -20,17 +20,35 @@ void AngleShooter::InitDefaultCommand()
 
 void AngleShooter:: AngleShoot(float AngleShooterSpeed)
 {
-	// Purpose:
-	//To climb the robot at a given climb speed
-	//Inputs: climb - takes a floating point value from -1 to 1, with 1 indicating full speed and .5 half speed.
 	AngleShooterTalon->Set(AngleShooterSpeed);
 }
 
+
+void AngleShooter:: AngleShootTrajectory(float AngleShooterSpeed, float AngleShooterDegrees)
+{
+
+	while(((CommandBase::oi->getAngleShootEncoder()->GetVoltage()/0.001)*0.072)<(AngleShooterDegrees-5) || (((CommandBase::oi->getAngleShootEncoder()->GetVoltage()/0.001)*0.072))>(AngleShooterDegrees+5))
+	{
+		if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<AngleShooterDegrees)
+		{
+			AngleShooterTalon->Set(AngleShooterSpeed);
+		}
+		else
+		{
+			AngleShooterTalon->Set(-AngleShooterSpeed);
+		}
+
+	}
+
+	AngleShooterTalon->Set(0);
+
+
+}
 
 void AngleShooter::StopAngleShooter()
 {
 
 	//stops the motion of the robot
-	AngleShooterTalon->Set(0,0);
+	AngleShooterTalon->Set(0);
 
 }

@@ -11,6 +11,9 @@
 #include <Commands/cmdLoadBallServo.h>
 #include <Commands/cmdTestServoUp.h>
 #include <Commands/cmdTestServoDown.h>
+#include <Commands/cmdAngleShooterTrajectorySet.h>
+#include <Commands/cmdAngleShooterMove.h>
+#include <Commands/cmdStopAngleShooter.h>
 
 
 OI::OI()
@@ -65,6 +68,16 @@ OI::OI()
 	shootBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_UP_fSHOOTBALL);
 	shootBall->WhenPressed(new cmdgrpLoadandShoot());
 
+	angleTrajectoryMove = new JoystickButton(driveStickL, L_RIGHT_SIDE_DOWN_fSETANGLETRAJECTORY);
+	angleTrajectoryMove->WhenPressed(new cmdAngleShooterTrajectorySet(180));
+
+	angleShooterUp = new JoystickButton(driveStickR, R_RIGHT_SIDE_UP_fANGLESHOOTERUP);
+	angleShooterUp->WhenPressed(new cmdAngleShooterMove(0.2));
+	angleShooterUp->WhenReleased(new cmdStopAngleShooter());
+
+	angleShooterDown = new JoystickButton(driveStickR, R_RIGHT_SIDE_DOWN_fANGLESHOOTERDOWN);
+	angleShooterDown->WhenPressed(new cmdAngleShooterMove(-0.2));
+	angleShooterDown->WhenReleased(new cmdStopAngleShooter());
 
 //RIGHT JOYSTICK------------------------------------------
 
