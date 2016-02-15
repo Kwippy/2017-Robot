@@ -19,14 +19,14 @@ void cmdVisionAngleShooter::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void cmdVisionAngleShooter::Execute()
 {
-	shootAngle->AngleShoot(angleShooterSpeed);
+	//shootAngle->AngleShoot(angleShooterSpeed);
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool cmdVisionAngleShooter::IsFinished()
 {
-	bool retVal= false;
+	/*
 		if(trajectoryAngle<=oi->getAngleShootEncoder()->GetVoltage())
 		{
 			retVal=true;
@@ -35,6 +35,8 @@ bool cmdVisionAngleShooter::IsFinished()
 		{
 			retVal=false;
 		}
+	*/
+	return true;
 }
 
 // Called once after isFinished returns true

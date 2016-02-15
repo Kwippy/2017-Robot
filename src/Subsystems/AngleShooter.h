@@ -14,6 +14,7 @@ public:
 	AngleShooter();
 	void InitDefaultCommand();
 	void AngleShoot(float AngleShooterSpeed);
+	void AngleShootTrajectory(float AngleShooterSpeed, float AngleShooterDegrees);
 	void StopAngleShooter();
 };
 
