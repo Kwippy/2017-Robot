@@ -71,13 +71,7 @@ OI::OI()
 	angleTrajectoryMove = new JoystickButton(driveStickL, L_RIGHT_SIDE_DOWN_fSETANGLETRAJECTORY);
 	angleTrajectoryMove->WhenPressed(new cmdAngleShooterTrajectorySet(180));
 
-	angleShooterUp = new JoystickButton(driveStickR, R_RIGHT_SIDE_UP_fANGLESHOOTERUP);
-	angleShooterUp->WhenPressed(new cmdAngleShooterMove(0.2));
-	angleShooterUp->WhenReleased(new cmdStopAngleShooter());
 
-	angleShooterDown = new JoystickButton(driveStickR, R_RIGHT_SIDE_DOWN_fANGLESHOOTERDOWN);
-	angleShooterDown->WhenPressed(new cmdAngleShooterMove(-0.2));
-	angleShooterDown->WhenReleased(new cmdStopAngleShooter());
 
 //RIGHT JOYSTICK------------------------------------------
 
@@ -93,6 +87,15 @@ OI::OI()
 
 	gyroReset= new JoystickButton(driveStickR, R_LEFT_SIDE_UP_fRESET_GYRO);
 	gyroReset->WhenPressed(new cmdResetGyro());
+
+
+	angleShooterUp = new JoystickButton(driveStickR, R_RIGHT_SIDE_UP_fANGLESHOOTERUP);
+	angleShooterUp->WhenPressed(new cmdAngleShooterMove(0.4));
+	angleShooterUp->WhenReleased(new cmdStopAngleShooter());
+
+	angleShooterDown = new JoystickButton(driveStickR, R_RIGHT_SIDE_DOWN_fANGLESHOOTERDOWN);
+	angleShooterDown->WhenPressed(new cmdAngleShooterMove(-0.4));
+	angleShooterDown->WhenReleased(new cmdStopAngleShooter());
 
 
 

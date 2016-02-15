@@ -7,8 +7,7 @@
 class cmdAngleShooterMove: public CommandBase
 {
 private:
-	float speed;
-
+	float angleMoveSpeed;
 public:
 	cmdAngleShooterMove(float AngleShooterSpeed);
 	void Initialize();

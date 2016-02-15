@@ -2,10 +2,11 @@
 
 cmdAngleShooterMove::cmdAngleShooterMove(float AngleShooterSpeed)
 {
-	speed=AngleShooterSpeed;
+	angleMoveSpeed=AngleShooterSpeed;
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
 	Requires(shootAngle);
+
 }
 
 // Called just before this Command runs the first time
@@ -17,7 +18,7 @@ void cmdAngleShooterMove::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void cmdAngleShooterMove::Execute()
 {
-	shootAngle->AngleShoot(speed);
+	shootAngle->AngleShoot(angleMoveSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
