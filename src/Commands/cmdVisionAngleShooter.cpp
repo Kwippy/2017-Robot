@@ -35,6 +35,7 @@ bool cmdVisionAngleShooter::IsFinished()
 		{
 			retVal=false;
 		}
+		return retVal;
 }
 
 // Called once after isFinished returns true

@@ -47,8 +47,8 @@ void Chassis::InitDefaultCommand()
 void Chassis::DriveWithJoystick(Joystick *stickL, Joystick *stickR)
 {
 	//Purpose:
-	//Using the driver station joysticks to drive the robot.
-	//Inputs:   Are Instances of the Joystick class.
+	//Using the driver station joySticks to drive the robot.
+	//Inputs:   Are Instances of the JoyStick class.
 
 	//Left stick is reversed because of the motor directions needed to make mecanum work properly.
 	robotDrive->TankDrive(-(stickL->GetY()), (stickR->GetY()),false);	//stickR, stickL, true)
@@ -59,7 +59,7 @@ void Chassis::DriveWithJoystick(Joystick *stickL, Joystick *stickR)
 void Chassis::AutoDrive(float left, float right)
 {
 	// Purpose:
-	//To drive the Robot in autounomous mode.
+	//To drive the Robot in autonomous mode.
 	//Inputs: left,right - takes a floating point value from -1 to 1, with 1 indicating full speed and .5 half speed.
 	robotDrive->TankDrive(left, right);
 }

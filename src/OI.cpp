@@ -125,14 +125,11 @@ bool OI::setVisionNumbers()
 		VisionAngle=stof(line);
 		getline(myfile, line2);
 		VisionDistance=stof(line2);
-		return true;
-	}
-	else
-	{
+		myfile.close();
 		return false;
 	}
-
-	myfile.close();
+	else
+		return true;
 }
 
 
