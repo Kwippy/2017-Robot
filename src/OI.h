@@ -21,7 +21,7 @@ public:
 //Left Joystick------------------------------------------------
 
 	Joystick* getDriveStickL();
-	JoystickButton *feedBall, *loadBall, *shootBall, *testServoUp, *testServoDown, *angleTrajectoryMove;
+	JoystickButton *feedBall, *loadBall, *shootBall, *testServoUp, *testServoDown;
 
 //Right JoyStick-----------------------------------------------
 
@@ -29,7 +29,6 @@ public:
 	JoystickButton *shootHigh;
 	JoystickButton *climberExtend, *climberRetract;
 	JoystickButton *gyroReset;
-	JoystickButton *angleShooterUp, *angleShooterDown;
 
 
 //XBOX Controller----------------------------------------------
