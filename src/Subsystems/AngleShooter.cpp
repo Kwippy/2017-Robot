@@ -24,11 +24,18 @@ void AngleShooter:: AngleShoot(float AngleShooterSpeed)
 }
 
 
-void AngleShooter:: AngleShootTrajectory(float AngleShooterSpeed, float AngleShooterDegrees)
+void AngleShooter:: AngleShootTrajectory(float AngleShooterDegrees)
 {
+	float AngleShooterSpeed;
+	float gain=0.005;
 
-	while(((CommandBase::oi->getAngleShootEncoder()->GetVoltage()/0.001)*0.072)<(AngleShooterDegrees-5) || (((CommandBase::oi->getAngleShootEncoder()->GetVoltage()/0.001)*0.072))>(AngleShooterDegrees+5))
+	while((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<(AngleShooterDegrees-5) || ((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))>(AngleShooterDegrees+5))
 	{
+		AngleShooterSpeed=(gain*((AngleShooterDegrees)-(((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)))+0.3;
+
+		/*
+		 * THIS IS UNNECESSARY USING OUR NEW FORMULA THAT INCORPORATES GAIN AND VARIABLE SPEED, leaving in until tested
+		 *
 		if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<AngleShooterDegrees)
 		{
 			AngleShooterTalon->Set(AngleShooterSpeed);
@@ -37,6 +44,7 @@ void AngleShooter:: AngleShootTrajectory(float AngleShooterSpeed, float AngleSho
 		{
 			AngleShooterTalon->Set(-AngleShooterSpeed);
 		}
+		*/
 
 	}
 
