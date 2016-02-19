@@ -11,21 +11,39 @@
 #include "Commands/AutoSallyPort.h"
 #include "Commands/AutoRockWall.h"
 #include "Commands/AutoRoughTerrain.h"
+#include <iostream>
 
 
 
 class Robot: public IterativeRobot
 {
 private:
+
+public:
 	Command *autonomousCommand;
 	LiveWindow *lw;
 	SendableChooser *chooser;
+	std::shared_ptr<NetworkTable> table;
 
 	void RobotInit()
 	{
 		CommandBase::init();
 		autonomousCommand = new ExampleCommand();
 		lw = LiveWindow::GetInstance();
+		table = NetworkTable::GetTable("EXAMPLENAME/myExampleName");
+
+		while(true)
+		{
+			std::cout << "Areas: ";
+			std::vector<double> arr =table->GetNumberArray("area", llvm::ArrayRef<double>());
+			for (unsigned int i=0; i<arr.size(); i++)
+			{
+				std::cout << arr[i]<<" ";
+			}
+			std :: cout <<std::endl;
+			Wait(1);
+		}
+
 
 		//		CommandBase::oi->getGyro()->SetSensitivity(.007);//.0125);
 		//		CommandBase::oi->getGyro()->InitGyro();
