@@ -6,8 +6,8 @@
 Shooter::Shooter() :  Subsystem("Shooter")
 {
 	//Creating two new instances of motor controllers that dictate each side--------------------------------------------
-	LeftShooterTalon = new Talon(LEFT_SHOOTER_TALON);
-	RightShooterTalon = new Talon(RIGHT_SHOOTER_TALON);
+	LeftShooterSRXTalon = new TalonSRX(LEFT_SHOOTER_SRX_TALON);
+	RightShooterSRXTalon = new TalonSRX(RIGHT_SHOOTER_SRX_TALON);
 	LoaderServo = new Servo(9);
 
 }
@@ -28,8 +28,8 @@ void Shooter::Shoot(float shootSpeed)
 	//To shoot the robot at a given fire speed
 	//Inputs: fire - takes a floating point value from -1 to 1, with 1 indicating full speed and .5 half speed.
 
-	LeftShooterTalon->Set(shootSpeed);
-	RightShooterTalon->Set(shootSpeed);
+	LeftShooterSRXTalon->Set(shootSpeed);
+	RightShooterSRXTalon->Set(shootSpeed);
 }
 
 
@@ -37,8 +37,8 @@ void Shooter::StopShooter()
 {
 
 	//stops the motion of the robot
-	LeftShooterTalon->Set(0,0);
-	RightShooterTalon->Set(0,0);
+	LeftShooterSRXTalon->Set(0,0);
+	RightShooterSRXTalon->Set(0,0);
 
 }
 

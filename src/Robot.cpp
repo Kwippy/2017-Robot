@@ -18,11 +18,12 @@
 class Robot: public IterativeRobot
 {
 private:
-
+	//Don't know whether variables should be in public or private.
+		Command *autonomousCommand;
+		LiveWindow *lw;
+		SendableChooser *chooser;
 public:
-	Command *autonomousCommand;
-	LiveWindow *lw;
-	SendableChooser *chooser;
+
 	std::shared_ptr<NetworkTable> table;
 
 	void RobotInit()

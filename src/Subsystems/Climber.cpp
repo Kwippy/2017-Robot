@@ -6,7 +6,7 @@
 Climber::Climber() :  Subsystem("Climber")
 {
 	//Creating two new instances of motor controllers that dictate each side--------------------------------------------
-	ClimberTalon = new Talon(CLIMBER_TALON);
+	ClimberSRXTalon = new TalonSRX(CLIMBER_SRX_TALON);
 
 }
 
@@ -25,7 +25,7 @@ void Climber::Climb(float climbSpeed)
 	// Purpose:
 	//To climb the robot at a given climb speed
 	//Inputs: climb - takes a floating point value from -1 to 1, with 1 indicating full speed and .5 half speed.
-	ClimberTalon->Set(climbSpeed);
+	ClimberSRXTalon->Set(climbSpeed);
 }
 
 
@@ -33,6 +33,6 @@ void Climber::StopClimber()
 {
 
 	//stops the motion of the robot
-	ClimberTalon->Set(0,0);
+	ClimberSRXTalon->Set(0,0);
 
 }

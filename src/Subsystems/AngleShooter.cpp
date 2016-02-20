@@ -6,7 +6,7 @@
 AngleShooter::AngleShooter() :
 		Subsystem("AngleShooter")
 {
-	AngleShooterTalon = new Talon(ANGLE_SHOOTER_TALON);
+	AngleShooterSRXTalon = new TalonSRX(ANGLE_SHOOTER_SRX_TALON);
 }
 void AngleShooter::InitDefaultCommand()
 {
@@ -20,7 +20,7 @@ void AngleShooter::InitDefaultCommand()
 
 void AngleShooter:: AngleShoot(float AngleShooterSpeed)
 {
-	AngleShooterTalon->Set(AngleShooterSpeed);
+	AngleShooterSRXTalon->Set(AngleShooterSpeed);
 }
 
 
@@ -32,6 +32,7 @@ void AngleShooter:: AngleShootTrajectory(float AngleShooterDegrees)
 	while((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<(AngleShooterDegrees-5) || ((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))>(AngleShooterDegrees+5))
 	{
 		AngleShooterSpeed=(gain*((AngleShooterDegrees)-(((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)))+0.3;
+		AngleShooterSRXTalon->Set(AngleShooterSpeed);
 
 		/*
 		 * THIS IS UNNECESSARY USING OUR NEW FORMULA THAT INCORPORATES GAIN AND VARIABLE SPEED, leaving in until tested
@@ -48,7 +49,7 @@ void AngleShooter:: AngleShootTrajectory(float AngleShooterDegrees)
 
 	}
 
-	AngleShooterTalon->Set(0);
+	AngleShooterSRXTalon->Set(0);
 
 
 }
@@ -57,6 +58,6 @@ void AngleShooter::StopAngleShooter()
 {
 
 	//stops the motion of the robot
-	AngleShooterTalon->Set(0);
+	AngleShooterSRXTalon->Set(0);
 
 }
