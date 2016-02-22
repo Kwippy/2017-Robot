@@ -21,6 +21,7 @@ public:
 	void InitDefaultCommand();
 	void DriveWithJoystick(Joystick *stickL, Joystick *stickR);
 	void AutoDrive(float left, float right);
+	void AutoDriveTalons(float FrontLeftTalonSpeed, float BackLeftTalonSpeed, float FrontRightTalonSpeed,  float BackRightTalonSpeed);
 	void StopAutonomous();
 };
 

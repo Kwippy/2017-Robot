@@ -5,5 +5,5 @@
 AutoRoughTerrain::AutoRoughTerrain()
 {
 	AddSequential (new Delay(1));
-	AddSequential (new AutoDrive(.5,.5, 48));
+
 }

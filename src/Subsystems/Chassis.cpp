@@ -18,7 +18,7 @@ Chassis::Chassis() :	Subsystem("Chassis")
 
 //Robot drive based on a definition of the motor configuration of each motor controller for the wheels--------------
 
-	robotDrive = new RobotDrive(FrontLeftTalon, FrontRightTalon,  BackLeftTalon, BackRightTalon);
+	robotDrive = new RobotDrive(FrontLeftTalon, BackLeftTalon, FrontRightTalon,  BackRightTalon);
 
 
 //Creates a new instance of Accelerometer---------------------------------------------------------------------------
@@ -64,15 +64,24 @@ void Chassis::AutoDrive(float left, float right)
 	robotDrive->TankDrive(left, right);
 }
 
+void Chassis::AutoDriveTalons(float FrontLeftTalonSpeed, float BackLeftTalonSpeed, float FrontRightTalonSpeed,  float BackRightTalonSpeed)
+{
+	FrontLeftTalon->Set(FrontLeftTalonSpeed);
+	BackLeftTalon->Set(BackLeftTalonSpeed);
+	FrontRightTalon->Set(FrontRightTalonSpeed);
+	BackRightTalon->Set(BackRightTalonSpeed);
 
+
+
+}
 
 void Chassis::StopAutonomous()
 {
 	//stops the motion of the robot
-	FrontLeftTalon->Set(0,0);
-	FrontRightTalon->Set(0,0);
-	BackLeftTalon->Set(0,0);
-	BackRightTalon->Set(0,0);
+	FrontLeftTalon->Set(0);
+	FrontRightTalon->Set(0);
+	BackLeftTalon->Set(0);
+	BackRightTalon->Set(0);
 }
 
 

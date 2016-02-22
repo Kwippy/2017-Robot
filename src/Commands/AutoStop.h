@@ -1,15 +1,13 @@
-#ifndef AutoDrive_H
-#define AutoDrive_H
+#ifndef AutoStop_H
+#define AutoStop_H
 
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class AutoDrive: public CommandBase
+class AutoStop: public CommandBase
 {
-private:
-	float rightSpeed, leftSpeed;
 public:
-	AutoDrive(float left, float right);
+	AutoStop();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

@@ -1,8 +1,8 @@
 #include "AutoDrive.h"
 
-AutoDrive::AutoDrive(float left, float right, float d)
+AutoDrive::AutoDrive(float left, float right)
 {
-	distance=d;
+
 	leftSpeed=left;
 	rightSpeed=right;
 
@@ -26,16 +26,17 @@ void AutoDrive::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool AutoDrive::IsFinished()
 {
-	bool retVal= false;
-	if(distance<=oi->getLeftEncoder()->GetDistance())
-	{
-		retVal=true;
-	}
-	else
-	{
-		retVal=false;
-	}
-	return retVal;
+	return true;
+//	bool retVal= false;
+//	if(distance<=oi->getLeftEncoder()->GetDistance())
+//	{
+//		retVal=true;
+//	}
+//	else
+//	{
+//		retVal=false;
+//	}
+//	return retVal;
 }
 
 // Called once after isFinished returns true
@@ -43,7 +44,7 @@ void AutoDrive::End()
 {
 
 	tankChassis->StopAutonomous();//stop all auto movement forward
-	oi->getLeftEncoder()->Reset(); //reset the distance measured by encoder to zero
+//	oi->getLeftEncoder()->Reset(); //reset the distance measured by encoder to zero
 
 }
 
