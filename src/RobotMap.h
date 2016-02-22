@@ -44,16 +44,16 @@ typedef enum{
 //	Joystick(R/L/XBOX)_ButtonName_fButtonFunction - The f is NOT a typo
 
 	L_TRIGGER=1,											//button 1
-	L_THUMB_BUTTON_DOWN_fLOADBALL, 							//button 2
+	L_THUMB_BUTTON_DOWN_fFEEDBALL, 							//button 2
 	L_THUMB_BUTTON_UP_fSHOOTBALL,							//button 3
-	L_THUMB_BUTTON_LEFT_fFEEDBALL,							//button 4
-	L_THUMB_BUTTON_RIGHT_fSHOOTHIGH,						//button 5
-	L_LEFT_SIDE_UP_fTESTSERVOUP,							//button 6
-	L_LEFT_SIDE_DOWN_fTESTSERVODOWN,						//button 7
-	L_FRONT_SIDE_LEFT,										//button 8
-	L_FRONT_SIDE_RIGHT,										//button 9
-	L_RIGHT_SIDE_DOWN_fSETANGLETRAJECTORY, 					//button 10
-	L_RIGHT_SIDE_UP,										//button 11
+	L_THUMB_BUTTON_LEFT_fDOWNPOSITION,							//button 4
+	L_THUMB_BUTTON_RIGHT_fSHOOTPOSITION,						//button 5
+	L_LEFT_SIDE_UP_fSHIFTSHOOTERUP,							//button 6
+	L_LEFT_SIDE_DOWN_fSHIFTSHOOTERDOWN,						//button 7
+	L_FRONT_SIDE_LEFT_fMOVESERVOBALL,										//button 8
+	L_FRONT_SIDE_RIGHT_fSPITBALL,										//button 9
+	L_RIGHT_SIDE_DOWN_fSHIFTSHOOTERDOWNSLIGHTLY, 					//button 10
+	L_RIGHT_SIDE_UP_fSHIFTSHOOTERUPSLIGHTLY,										//button 11
 	L_NUM_OF_JOYSTICK_BUTTONS
 
 } JOYSTICK_LEFT_BUTTONS_t;
@@ -65,11 +65,11 @@ typedef enum{
 	R_TRIGGER=1,											//button 1
 	R_THUMB_BUTTON_DOWN_fCLIMBRETRACT, 						//button 2
 	R_THUMB_BUTTON_UP_fCLIMBEXTEND,							//button 3
-	R_THUMB_BUTTON_LEFT,									//button 4
-	R_THUMB_BUTTON_RIGHT_f,									//button 5
-	R_LEFT_SIDE_UP_fRESET_GYRO,								//button 6
-	R_LEFT_SIDE_DOWN,										//button 7
-	R_FRONT_SIDE_LEFT,										//button 8
+	R_THUMB_BUTTON_LEFT_PISTONRETRACT,									//button 4
+	R_THUMB_BUTTON_RIGHT_fPISTONEXTEND,									//button 5
+	R_LEFT_SIDE_UP_fTESTSERVOUP,								//button 6
+	R_LEFT_SIDE_DOWN_fTESTSERVODOWN,										//button 7
+	R_FRONT_SIDE_LEFT_fRESETGYRO,										//button 8
 	R_FRONT_SIDE_RIGHT,										//button 9
 	R_RIGHT_SIDE_DOWN_fANGLESHOOTERDOWN, 					//button 10
 	R_RIGHT_SIDE_UP_fANGLESHOOTERUP,						//button 11

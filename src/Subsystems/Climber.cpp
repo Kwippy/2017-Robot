@@ -7,6 +7,7 @@ Climber::Climber() :  Subsystem("Climber")
 {
 	//Creating two new instances of motor controllers that dictate each side--------------------------------------------
 	ClimberSRXTalon = new TalonSRX(CLIMBER_SRX_TALON);
+	climberSolenoid = new DoubleSolenoid(1, 0);
 
 }
 
@@ -28,6 +29,26 @@ void Climber::Climb(float climbSpeed)
 	ClimberSRXTalon->Set(climbSpeed);
 }
 
+void Climber::ExtendPiston()
+{
+	climberSolenoid->Set(climberSolenoid->kForward);
+}
+
+void Climber::RetractPiston()
+{
+	climberSolenoid->Set(climberSolenoid->kReverse);
+}
+
+void  Climber::StopPiston()
+{
+	climberSolenoid->Set(climberSolenoid->kOff);
+}
+
+
+DoubleSolenoid::Value Climber::GetPistonPosition()
+{
+ 	return climberSolenoid->Get();
+}
 
 void Climber::StopClimber()
 {

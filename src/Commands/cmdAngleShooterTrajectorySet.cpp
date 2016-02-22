@@ -32,7 +32,7 @@ bool cmdAngleShooterTrajectorySet::IsFinished()
 	*/
 	return true;
 }
-//Hi Logan how ya doin? Good? Cool benas buddy :) Love you see ya soon ;) <3 <3
+
 // Called once after isFinished returns true
 void cmdAngleShooterTrajectorySet::End()
 {

@@ -18,18 +18,23 @@ public:
 	Gyro* getGyro();
 	Encoder *LeftEncoder, *RightEncoder, *getLeftEncoder(), *getRightEncoder();
 	AnalogInput *AngleShootEncoder, *getAngleShootEncoder();
+
 //Left Joystick------------------------------------------------
 
 	Joystick* getDriveStickL();
-	JoystickButton *feedBall, *loadBall, *shootBall, *testServoUp, *testServoDown, *angleTrajectoryMove;
+	JoystickButton *feedBall, *spitBall, *moveServoBall, *shootBall;
+
+	JoystickButton *angleTrajectorySetShoot, *angleTrajectorySetDown;
+	JoystickButton *shiftShooterUp, *shiftShooterDown, *shiftShooterUpSlightly, *shiftShooterDownSlightly;
 
 //Right JoyStick-----------------------------------------------
 
 	Joystick* getDriveStickR();
-	JoystickButton *shootHigh;
-	JoystickButton *climberExtend, *climberRetract;
+	JoystickButton *climberExtend, *climberRetract, *moveClimberPistonUp, *moveClimberPistonDown;
 	JoystickButton *gyroReset;
 	JoystickButton *angleShooterUp, *angleShooterDown;
+	JoystickButton *testServoUp, *testServoDown;
+
 
 
 //XBOX Controller----------------------------------------------
