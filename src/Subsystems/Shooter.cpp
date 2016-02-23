@@ -70,6 +70,11 @@ void Shooter::LoadBall()
 	}
 }
 
+void Shooter::ServoDownPosition()
+{
+	LoaderServo->Set(0.5);
+}
+
 
 void Shooter::ServoUp()
 {

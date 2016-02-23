@@ -20,6 +20,7 @@ public:
 	void Shoot(float shootSpeed);
 	void StopShooter();
 	void LoadBall();
+	void ServoDownPosition();
 	void ServoUp();
 	void ServoDown();
 	Servo* getLoaderServo();

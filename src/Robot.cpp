@@ -7,24 +7,21 @@
 #include "Commands/AutoChevaldeFrise.h"
 #include "Commands/AutoRamparts.h"
 #include "Commands/AutoMoat.h"
-#include "Commands/AutoDrawbridge.h"
-#include "Commands/AutoSallyPort.h"
 #include "Commands/AutoRockWall.h"
 #include "Commands/AutoRoughTerrain.h"
-#include <iostream>
-
 
 
 class Robot: public IterativeRobot
 {
 private:
 	//Don't know whether variables should be in public or private.
-
-public:
-
 	Command *autonomousCommand;
 	LiveWindow *lw;
 	SendableChooser *chooser;
+
+public:
+
+
 	//	std::shared_ptr<NetworkTable> table;
 
 	void RobotInit()
@@ -52,6 +49,7 @@ public:
 		//		CommandBase::oi->getGyro()->Reset(); // Resets the gyro's heading
 
 		CommandBase::oi->getGyro()->Calibrate();
+		CommandBase::ballShooter->ServoDownPosition();
 
 		//		stopPneumaticsCommand= new cmdStopPneumatics();
 
@@ -60,13 +58,13 @@ public:
 		chooser= new SendableChooser();
 
 
-		chooser->AddDefault("Low Bar (setup backwards)", new AutoLowBar());
-		chooser->AddObject("Cheval de Frise (setup forwards)", new AutoChevaldeFrise());
-		chooser->AddObject("Portcullis (setup forwards)", new AutoPortcullis());
-		chooser->AddObject("Ramparts (setup backwards)", new AutoRamparts());
-		chooser->AddObject("Moat (setup backwards)", new AutoMoat());
-		chooser->AddObject("RockWall (setup backwards)", new AutoRockWall());
-		chooser->AddObject("Rough Terrain (setup backwards)", new AutoRoughTerrain());
+		chooser->AddDefault("Low Bar (Set For)", new AutoLowBar());
+		chooser->AddObject("Cheval de Frise (Set For)", new AutoChevaldeFrise());
+		chooser->AddObject("Portcullis (Set For)", new AutoPortcullis());
+		chooser->AddObject("Ramparts (Set Back)", new AutoRamparts());
+		chooser->AddObject("Moat (Set Back)", new AutoMoat());
+		chooser->AddObject("RockWall (Set Back)", new AutoRockWall());
+		chooser->AddObject("Rough Terrain (Set Back)", new AutoRoughTerrain());
 
 
 		SmartDashboard::PutData("Autonomous Modes", chooser);
@@ -80,6 +78,7 @@ public:
 
 	void AutonomousInit()
 	{
+		CommandBase::ballShooter->ServoDownPosition();
 		CommandBase::oi->getGyro()->Reset(); // Resets the gyro's heading
 		autonomousCommand=(Command *)chooser-> GetSelected();
 
@@ -100,6 +99,9 @@ public:
 		// this line or comment it out.
 		if (autonomousCommand != NULL)
 			autonomousCommand->Cancel();
+
+		CommandBase::ballShooter->ServoDownPosition();
+
 	}
 
 	void TeleopPeriodic()
