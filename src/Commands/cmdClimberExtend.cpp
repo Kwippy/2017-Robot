@@ -16,7 +16,7 @@ void cmdClimberExtend::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void cmdClimberExtend::Execute()
 {
-	robotClimber->Climb(0.3);
+	robotClimber->Climb(-1);
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -16,6 +16,9 @@
 #include <Commands/cmdStopAngleShooter.h>
 #include <Commands/cmdAngleShooterTrajectoryShift.h>
 #include <Commands/cmdMoveClimberPiston.h>
+#include <Commands/cmdAngleShooterPreventBackdrive.h>
+
+
 
 OI::OI()
 {
@@ -65,23 +68,28 @@ OI::OI()
 	shootBall->WhenPressed(new cmdgrpLoadandShoot());
 
 	angleTrajectorySetShoot = new JoystickButton(driveStickL, L_THUMB_BUTTON_RIGHT_fSHOOTPOSITION);
-	angleTrajectorySetShoot->WhenPressed(new cmdAngleShooterTrajectorySet(192));
+	angleTrajectorySetShoot->WhenPressed(new cmdAngleShooterTrajectorySet(179));
+	angleTrajectorySetShoot->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 	angleTrajectorySetDown = new JoystickButton(driveStickL, L_THUMB_BUTTON_LEFT_fDOWNPOSITION);
-	angleTrajectorySetDown->WhenPressed(new cmdAngleShooterTrajectorySet(270));
+	angleTrajectorySetDown->WhenPressed(new cmdAngleShooterTrajectorySet(246));
+	angleTrajectorySetDown->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 	shiftShooterUp = new JoystickButton(driveStickL, L_LEFT_SIDE_UP_fSHIFTSHOOTERUP);
-	shiftShooterUp->WhenPressed(new cmdAngleShooterTrajectoryShift(-5));
+	shiftShooterUp->WhenPressed(new cmdAngleShooterTrajectoryShift(-4));
+	shiftShooterUp->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 	shiftShooterDown = new JoystickButton(driveStickL, L_LEFT_SIDE_DOWN_fSHIFTSHOOTERDOWN);
-	shiftShooterDown->WhenPressed(new cmdAngleShooterTrajectoryShift(5));
+	shiftShooterDown->WhenPressed(new cmdAngleShooterTrajectoryShift(4));
+	shiftShooterDown->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 	shiftShooterUpSlightly = new JoystickButton(driveStickL, L_RIGHT_SIDE_UP_fSHIFTSHOOTERUPSLIGHTLY);
 	shiftShooterUpSlightly->WhenPressed(new cmdAngleShooterTrajectoryShift(-1));
+	shiftShooterUpSlightly->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 	shiftShooterDownSlightly = new JoystickButton(driveStickL, L_RIGHT_SIDE_DOWN_fSHIFTSHOOTERDOWNSLIGHTLY);
 	shiftShooterDownSlightly->WhenPressed(new cmdAngleShooterTrajectoryShift(1));
-
+	shiftShooterDownSlightly->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 
 
@@ -100,13 +108,16 @@ OI::OI()
 	gyroReset= new JoystickButton(driveStickR, R_FRONT_SIDE_LEFT_fRESETGYRO);
 	gyroReset->WhenPressed(new cmdResetGyro());
 
+	stopAngleShooter = new JoystickButton(driveStickR, R_FRONT_SIDE_RIGHT_FSTOPANGLESHOOTER);
+	stopAngleShooter->WhenPressed(new cmdStopAngleShooter());
+
 	angleShooterUp = new JoystickButton(driveStickR, R_RIGHT_SIDE_UP_fANGLESHOOTERUP);
 	angleShooterUp->WhenPressed(new cmdAngleShooterMove(0.6));
-	angleShooterUp->WhenReleased(new cmdStopAngleShooter());
+	angleShooterUp->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 	angleShooterDown = new JoystickButton(driveStickR, R_RIGHT_SIDE_DOWN_fANGLESHOOTERDOWN);
 	angleShooterDown->WhenPressed(new cmdAngleShooterMove(-0.6));
-	angleShooterDown->WhenReleased(new cmdStopAngleShooter());
+	angleShooterDown->WhenReleased(new cmdAngleShooterPreventBackdrive());
 
 	testServoUp = new JoystickButton(driveStickR, R_LEFT_SIDE_UP_fTESTSERVOUP);
 	testServoUp->WhenPressed(new cmdTestServoUp());

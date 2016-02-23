@@ -16,6 +16,7 @@ public:
 	void AngleShoot(float AngleShooterSpeed);
 	void AngleShootTrajectory(float AngleShooterDegrees);
 	void AngleShootTrajectoryShift(float AngleDegreeShift);
+	void PreventBackDrive();
 	void StopAngleShooter();
 };
 

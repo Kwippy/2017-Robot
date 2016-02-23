@@ -31,7 +31,7 @@ public:
 
 	Joystick* getDriveStickR();
 	JoystickButton *climberExtend, *climberRetract, *moveClimberPistonUp, *moveClimberPistonDown;
-	JoystickButton *gyroReset;
+	JoystickButton *gyroReset, *stopAngleShooter;
 	JoystickButton *angleShooterUp, *angleShooterDown;
 	JoystickButton *testServoUp, *testServoDown;
 

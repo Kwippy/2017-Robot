@@ -3,6 +3,7 @@
 #include "../CommandBase.h"
 #include "OI.h"
 
+
 AngleShooter::AngleShooter() :
 Subsystem("AngleShooter")
 {
@@ -26,38 +27,26 @@ void AngleShooter:: AngleShoot(float AngleShooterSpeed)
 
 void AngleShooter:: AngleShootTrajectory(float AngleShooterDegrees)
 {
-	float AngleShooterSpeed=0;
-	float gain=0.002;
-	float backDriveGain=0.000001;
+	//float AngleShooterSpeed=0.25;
+	//float gain=0.0006;
 
-	while((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<(AngleShooterDegrees-5) || ((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))>(AngleShooterDegrees+5))
+	while((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<(AngleShooterDegrees-0.1) || ((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))>(AngleShooterDegrees+0.1))
 	{
 		if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<AngleShooterDegrees)
 		{
-			AngleShooterSpeed=(gain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))-(AngleShooterDegrees))+0.2;
-			AngleShooterSRXTalon->Set(AngleShooterSpeed);
+		//	AngleShooterSpeed=(gain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))-(AngleShooterDegrees));
+			AngleShooterSRXTalon->Set(-0.35);
 		}
 		else
 		{
-			AngleShooterSpeed=(gain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))-(AngleShooterDegrees))-0.2;
-			AngleShooterSRXTalon->Set(AngleShooterSpeed);
+		//	AngleShooterSpeed=(gain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))-(AngleShooterDegrees));
+			AngleShooterSRXTalon->Set(0.55);
 		}
 	}
 
-	float AngleShooterBackDriveSpeed=0;
 
-	if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)>=180)
-	{
-		AngleShooterBackDriveSpeed= (backDriveGain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)-(180)))+1.0;
-	}
-	else
-	{
-		AngleShooterBackDriveSpeed= (backDriveGain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)-(180)))-1.0;
-	}
 
-	AngleShooterSRXTalon->Set(AngleShooterBackDriveSpeed);
-
-	//	AngleShooterSRXTalon->Set(0);
+		AngleShooterSRXTalon->Set(0);
 }
 
 void AngleShooter:: AngleShootTrajectoryShift(float AngleDegreeShift)
@@ -65,42 +54,46 @@ void AngleShooter:: AngleShootTrajectoryShift(float AngleDegreeShift)
 	//float AngleShooterDegreesCurrently=(((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072);
 	float AngleShooterDestination=(((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072) + AngleDegreeShift;
 	//float gain=0.003;
-	float backDriveGain=0.000001;
-	float AngleShooterShiftSpeed=0.35;
-	float AngleShooterShiftBackDriveSpeed;
+	//float AngleShooterShiftSpeed=0;
 
 
-	while((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<(AngleShooterDestination-0.5) || ((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))>(AngleShooterDestination+0.5))
+	while((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<(AngleShooterDestination-0.1) || ((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))>(AngleShooterDestination+0.1))
 	{
-		AngleShooterSRXTalon->Set(AngleShooterShiftSpeed);
+		//AngleShooterSRXTalon->Set(AngleShooterShiftSpeed);
 
 // I don't think this is necessary as the speed to move such a small amount does not need to be and maybe should not be variable.
 		if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)<AngleShooterDestination)
 		{
 			//AngleShooterShiftSpeed=(gain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))-(AngleShooterDestination))-0.2;
-			AngleShooterSRXTalon->Set(-AngleShooterShiftSpeed);
+			AngleShooterSRXTalon->Set(-0.35);
 		}
 		else
 		{
 			//AngleShooterShiftSpeed=(gain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072))-(AngleShooterDestination))+0.2;
-			AngleShooterSRXTalon->Set(AngleShooterShiftSpeed);
+			AngleShooterSRXTalon->Set(0.55);
 		}
 
 	}
 
+	AngleShooterSRXTalon->Set(0);
 
-	if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)>=180)
-	{
-		AngleShooterShiftBackDriveSpeed= (backDriveGain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)-(180)))-1.0;
-	}
-	else
-	{
-		AngleShooterShiftBackDriveSpeed= (backDriveGain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)-(180)))+1.0;
-	}
+}
 
-	AngleShooterSRXTalon->Set(AngleShooterShiftBackDriveSpeed);
+void AngleShooter::PreventBackDrive()
+{
+	float AngleShooterBackDriveSpeed=0;
+	float backDriveGain=0.000001;
 
-	//	AngleShooterSRXTalon->Set(0);
+		if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)>=180)
+		{
+			AngleShooterBackDriveSpeed= (backDriveGain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)-(180)))+0.08;
+		}
+		else
+		{
+			AngleShooterSRXTalon->Set(0);
+		}
+
+		AngleShooterSRXTalon->Set(AngleShooterBackDriveSpeed);
 }
 
 

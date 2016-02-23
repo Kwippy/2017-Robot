@@ -70,7 +70,7 @@ typedef enum{
 	R_LEFT_SIDE_UP_fTESTSERVOUP,								//button 6
 	R_LEFT_SIDE_DOWN_fTESTSERVODOWN,										//button 7
 	R_FRONT_SIDE_LEFT_fRESETGYRO,										//button 8
-	R_FRONT_SIDE_RIGHT,										//button 9
+	R_FRONT_SIDE_RIGHT_FSTOPANGLESHOOTER,										//button 9
 	R_RIGHT_SIDE_DOWN_fANGLESHOOTERDOWN, 					//button 10
 	R_RIGHT_SIDE_UP_fANGLESHOOTERUP,						//button 11
 	R_NUM_OF_JOYSTICK_BUTTONS
