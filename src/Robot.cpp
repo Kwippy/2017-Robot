@@ -60,15 +60,13 @@ public:
 		chooser= new SendableChooser();
 
 
-		chooser->AddDefault("Cheval de Frise", new AutoChevaldeFrise());
-		chooser->AddObject("Low Bar", new AutoLowBar());
-		chooser->AddObject("Portcullis", new AutoPortcullis());
-		chooser->AddObject("Ramparts", new AutoRamparts());
-		chooser->AddObject("Moat", new AutoMoat());
-		chooser->AddObject("Drawbridge", new AutoDrawbridge());
-		chooser->AddObject("SallyPort", new AutoSallyPort());
-		chooser->AddObject("RockWall", new AutoRockWall());
-		chooser->AddObject("Rough Terrain", new AutoRoughTerrain());
+		chooser->AddDefault("Low Bar (setup backwards)", new AutoLowBar());
+		chooser->AddObject("Cheval de Frise (setup forwards)", new AutoChevaldeFrise());
+		chooser->AddObject("Portcullis (setup forwards)", new AutoPortcullis());
+		chooser->AddObject("Ramparts (setup backwards)", new AutoRamparts());
+		chooser->AddObject("Moat (setup backwards)", new AutoMoat());
+		chooser->AddObject("RockWall (setup backwards)", new AutoRockWall());
+		chooser->AddObject("Rough Terrain (setup backwards)", new AutoRoughTerrain());
 
 
 		SmartDashboard::PutData("Autonomous Modes", chooser);
