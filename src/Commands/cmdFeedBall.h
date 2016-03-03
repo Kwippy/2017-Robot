@@ -6,8 +6,10 @@
 
 class cmdFeedBall: public CommandBase
 {
+private:
+	float feedSpeed;
 public:
-	cmdFeedBall();
+	cmdFeedBall(float FeedingSpeed);
 	void Initialize();
 	void Execute();
 	bool IsFinished();

@@ -7,9 +7,9 @@
 class cmdShootHigh: public CommandBase
 {
 private:
-
+	float shootSpeed;
 public:
-	cmdShootHigh();
+	cmdShootHigh(float ShootingSpeed);
 	void Initialize();
 	void Execute();
 	bool IsFinished();

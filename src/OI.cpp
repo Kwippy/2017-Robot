@@ -54,11 +54,11 @@ OI::OI()
 	driveStickL = new Joystick(JOYSTICKLEFT);
 
 	feedBall = new JoystickButton(driveStickL, L_THUMB_BUTTON_DOWN_fFEEDBALL);
-	feedBall->WhenPressed(new cmdFeedBall());
+	feedBall->WhenPressed(new cmdFeedBall(-0.6));
 	feedBall->WhenReleased(new cmdShooterOff());
 
 	spitBall = new JoystickButton(driveStickL, L_FRONT_SIDE_RIGHT_fSPITBALL);
-	spitBall->WhenPressed(new cmdShootHigh());
+	spitBall->WhenPressed(new cmdShootHigh(0.7));
 	spitBall->WhenReleased(new cmdShooterOff());
 
 	moveServoBall = new JoystickButton(driveStickL, L_FRONT_SIDE_LEFT_fMOVESERVOBALL);

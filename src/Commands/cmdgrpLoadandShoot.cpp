@@ -8,7 +8,7 @@
 cmdgrpLoadandShoot::cmdgrpLoadandShoot()
 {
 
-	AddSequential (new cmdShootHigh());
+	AddSequential (new cmdShootHigh(0.4));
 	AddSequential (new Delay(3));
 	AddSequential (new cmdLoadBallServo());
 	AddSequential (new Delay(1));

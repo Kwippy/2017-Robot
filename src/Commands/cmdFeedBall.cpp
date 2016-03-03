@@ -1,10 +1,11 @@
 #include "cmdFeedBall.h"
 
-cmdFeedBall::cmdFeedBall()
+cmdFeedBall::cmdFeedBall(float FeedingSpeed)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
 	Requires(ballShooter);
+	feedSpeed=FeedingSpeed;
 }
 
 // Called just before this Command runs the first time
@@ -16,7 +17,7 @@ void cmdFeedBall::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void cmdFeedBall::Execute()
 {
-	ballShooter->Shoot(-0.6);
+	ballShooter->Shoot(feedSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
