@@ -74,6 +74,10 @@ void Shooter::ServoDownPosition()
 {
 	LoaderServo->Set(0.5);
 }
+void Shooter::ServoFirePosition()
+{
+	LoaderServo->Set(1);
+}
 
 
 void Shooter::ServoUp()

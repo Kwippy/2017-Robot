@@ -57,6 +57,7 @@ OI::OI()
 	feedBall->WhenPressed(new cmdFeedBall(-0.6));
 	feedBall->WhenReleased(new cmdShooterOff());
 
+
 	spitBall = new JoystickButton(driveStickL, L_FRONT_SIDE_RIGHT_fSPITBALL);
 	spitBall->WhenPressed(new cmdShootHigh(0.7));
 	spitBall->WhenReleased(new cmdShooterOff());

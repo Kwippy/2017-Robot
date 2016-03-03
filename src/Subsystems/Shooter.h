@@ -21,6 +21,7 @@ public:
 	void StopShooter();
 	void LoadBall();
 	void ServoDownPosition();
+	void ServoFirePosition();
 	void ServoUp();
 	void ServoDown();
 	Servo* getLoaderServo();
