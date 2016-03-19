@@ -1,39 +1,40 @@
-#include <Commands/cmdClimberExtend.h>
+#include "AutoDriveTalonsFastBackwards.h"
 
-cmdClimberExtend::cmdClimberExtend()
+AutoDriveTalonsFastBackwards::AutoDriveTalonsFastBackwards()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
-	Requires(robotClimber);
+	Requires(tankChassis);
 }
 
 // Called just before this Command runs the first time
-void cmdClimberExtend::Initialize()
+void AutoDriveTalonsFastBackwards::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void cmdClimberExtend::Execute()
+void AutoDriveTalonsFastBackwards::Execute()
 {
-	robotClimber->Climb(-0.8);
+	tankChassis->AutoDriveTalons(-0.6, -0.6, -0.6, -0.6);
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool cmdClimberExtend::IsFinished()
+bool AutoDriveTalonsFastBackwards::IsFinished()
 {
 	return true;
 }
 
 // Called once after isFinished returns true
-void cmdClimberExtend::End()
+void AutoDriveTalonsFastBackwards::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void cmdClimberExtend::Interrupted()
+void AutoDriveTalonsFastBackwards::Interrupted()
 {
 
 }
