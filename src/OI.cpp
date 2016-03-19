@@ -69,11 +69,11 @@ OI::OI()
 	shootBall->WhenPressed(new cmdgrpLoadandShoot());
 
 //	angleTrajectorySetShoot = new JoystickButton(driveStickL, L_THUMB_BUTTON_RIGHT_fSHOOTPOSITION);
-//	angleTrajectorySetShoot->WhenPressed(new cmdAngleShooterTrajectorySet(184));
+//	angleTrajectorySetShoot->WhenPressed(new cmdAngleShooterTrajectorySet(157));
 //	angleTrajectorySetShoot->WhenReleased(new cmdAngleShooterPreventBackdrive());
 //
 //	angleTrajectorySetDown = new JoystickButton(driveStickL, L_THUMB_BUTTON_LEFT_fDOWNPOSITION);
-//	angleTrajectorySetDown->WhenPressed(new cmdAngleShooterTrajectorySet(246));
+//	angleTrajectorySetDown->WhenPressed(new cmdAngleShooterTrajectorySet(219));
 //	angleTrajectorySetDown->WhenReleased(new cmdAngleShooterPreventBackdrive());
 //
 //	shiftShooterUp = new JoystickButton(driveStickL, L_LEFT_SIDE_UP_fSHIFTSHOOTERUP);
