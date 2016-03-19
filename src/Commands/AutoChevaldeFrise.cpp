@@ -8,6 +8,7 @@
 
 AutoChevaldeFrise::AutoChevaldeFrise()
 {
+	AddSequential (new AutoStop());
 	/*
 	AddSequential (new Delay(1));//waits a second
 	AddSequential (new cmdAngleShooterTrajectorySet(246));//puts arm down to push down planks

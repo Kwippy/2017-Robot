@@ -107,10 +107,10 @@ OI::OI()
 	climberExtend->WhenReleased(new cmdClimberOff());
 
 	gyroReset= new JoystickButton(driveStickR, R_FRONT_SIDE_LEFT_fRESETGYRO);
-	gyroReset->WhenPressed(new cmdResetGyro());
+	gyroReset->WhenPressed(new cmdAngleShooterMove(0.2));
 
 	stopAngleShooter = new JoystickButton(driveStickR, R_FRONT_SIDE_RIGHT_FSTOPANGLESHOOTER);
-	stopAngleShooter->WhenPressed(new cmdStopAngleShooter());
+	stopAngleShooter->WhenPressed(new cmdAngleShooterMove(0.1));
 
 	angleShooterUp = new JoystickButton(driveStickR, R_RIGHT_SIDE_UP_fANGLESHOOTERUP);
 	angleShooterUp->WhenPressed(new cmdAngleShooterMove(0.8));

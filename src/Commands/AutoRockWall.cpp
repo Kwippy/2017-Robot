@@ -1,4 +1,4 @@
-#include <Commands/AutoDriveTalonsFastBackwards.h>
+#include <Commands/AutoDriveTalonsReallyFastBackwards.h>
 #include "AutoRockWall.h"
 #include "Commands/Delay.h"
 #include "../Robotmap.h"
@@ -6,9 +6,10 @@
 #include "Commands/cmdAngleShooterTrajectorySet.h"
 AutoRockWall::AutoRockWall()
 {
-	AddSequential (new Delay(1));//waits a second
-	//AddSequential (new cmdAngleShooterTrajectorySet(150)); //sets arm up to known value
-	AddSequential (new AutoDriveTalonsFastBackwards());
-	AddSequential (new Delay(4));//drives for 4 seconds
-	AddSequential (new AutoStop());
+	//drives over backwards
+		AddSequential (new Delay(1)); //waits a second
+		//AddSequential (new cmdAngleShooterTrajectorySet(150));//sets arm up in known position
+		AddSequential (new AutoDriveTalonsReallyFastBackwards());
+		AddSequential (new Delay(3));//drives for 4 seconds
+		AddSequential (new AutoStop());
 }
