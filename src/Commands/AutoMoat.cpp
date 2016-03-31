@@ -3,14 +3,14 @@
 #include "Commands/Delay.h"
 #include "../Robotmap.h"
 #include "Commands/AutoStop.h"
-#include "Commands/cmdAngleShooterTrajectorySet.h"
+#include "Commands/cmdAngleShooterMove.h"
 
 AutoMoat::AutoMoat()
 {
-	AddSequential (new Delay(1));//waits one second
-	//AddSequential (new cmdAngleShooterTrajectorySet(150)); //sets arm to known angle
-	AddSequential (new AutoDriveTalonsFastBackwards());
-	AddSequential (new Delay(4)); //stops after 4 seconds
-	AddSequential (new AutoStop());
+	AddSequential (new Delay(1));							//waits one second
+	AddSequential (new cmdAngleShooterMove(0.1)); 			//locks shooter to upper position
+	AddSequential (new AutoDriveTalonsFastBackwards()); 	//drives backwards fast
+	AddSequential (new Delay(3)); 							//drives for 3 seconds
+	AddSequential (new AutoStop());							//stops
 
 }

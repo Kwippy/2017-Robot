@@ -3,15 +3,14 @@
 #include "Commands/Delay.h"
 #include "../Robotmap.h"
 #include "Commands/AutoStop.h"
-#include "Commands/cmdAngleShooterTrajectorySet.h"
+#include "Commands/cmdAngleShooterMove.h"
 
 AutoRamparts::AutoRamparts()
 {
-	//drives over backwards
-		AddSequential (new Delay(1)); //waits a second
-		//AddSequential (new cmdAngleShooterTrajectorySet(150));//sets arm up in known position
-		AddSequential (new AutoDriveTalonsReallyFastBackwards());
-		AddSequential (new Delay(3));//drives for 4 seconds
-		AddSequential (new AutoStop());
 
+		AddSequential (new Delay(1)); 								//waits a second
+		AddSequential (new cmdAngleShooterMove(0.1)); 				//locks shooter to upper position
+		AddSequential (new AutoDriveTalonsReallyFastBackwards());	//drives forwards at 80% speed
+		AddSequential (new Delay(3));								//drives for 3 seconds
+		AddSequential (new AutoStop());								//stops
 }
