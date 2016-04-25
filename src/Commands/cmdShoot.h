@@ -4,12 +4,12 @@
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class cmdShootHigh: public CommandBase
+class cmdShoot: public CommandBase
 {
 private:
 	float shootSpeed;
 public:
-	cmdShootHigh(float ShootingSpeed);
+	cmdShoot(float ShootingSpeed);
 	void Initialize();
 	void Execute();
 	bool IsFinished();

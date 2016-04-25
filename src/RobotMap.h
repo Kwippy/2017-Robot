@@ -63,16 +63,16 @@ typedef enum{
 //	Joystick(R/L/XBOX)_ButtonName_fButtonFunction - The f is NOT a typo
 
 	R_TRIGGER=1,											//button 1
-	R_THUMB_BUTTON_DOWN_fCLIMBRETRACT, 						//button 2
-	R_THUMB_BUTTON_UP_fCLIMBEXTEND,							//button 3
-	R_THUMB_BUTTON_LEFT_PISTONRETRACT,									//button 4
-	R_THUMB_BUTTON_RIGHT_fPISTONEXTEND,									//button 5
+	R_THUMB_BUTTON_DOWN_fANGLESHOOTERDOWN, 						//button 2
+	R_THUMB_BUTTON_UP_fANGLESHOOTERUP,							//button 3
+	R_THUMB_BUTTON_LEFT_fLOCKSHOOTERUP,								//button 4
+	R_THUMB_BUTTON_RIGHT_fLOCKSHOOTERUP,									//button 5
 	R_LEFT_SIDE_UP_fTESTSERVOUP,								//button 6
 	R_LEFT_SIDE_DOWN_fTESTSERVODOWN,										//button 7
-	R_FRONT_SIDE_LEFT_fRESETGYRO,										//button 8
-	R_FRONT_SIDE_RIGHT_FSTOPANGLESHOOTER,										//button 9
-	R_RIGHT_SIDE_DOWN_fANGLESHOOTERDOWN, 					//button 10
-	R_RIGHT_SIDE_UP_fANGLESHOOTERUP,						//button 11
+	R_FRONT_SIDE_LEFT_fSTOPSHOOTER,										//button 8
+	R_FRONT_SIDE_RIGHT_fSTOPANGLESHOOTER,										//button 9
+	R_RIGHT_SIDE_DOWN_fFEEDERFEEDFAST, 					//button 10
+	R_RIGHT_SIDE_UP_fSHOOTERFIREFAST,						//button 11
 	R_NUM_OF_JOYSTICK_BUTTONS
 
 } JOYSTICK_RIGHT_BUTTONS_t;

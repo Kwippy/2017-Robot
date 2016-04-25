@@ -1,6 +1,6 @@
-#include <Commands/cmdShootHigh.h>
+#include <Commands/cmdShoot.h>
 
-cmdShootHigh::cmdShootHigh(float ShootingSpeed)
+cmdShoot::cmdShoot(float ShootingSpeed)
 {
 
 	// Use Requires() here to declare subsystem dependencies
@@ -10,32 +10,32 @@ cmdShootHigh::cmdShootHigh(float ShootingSpeed)
 }
 
 // Called just before this Command runs the first time
-void cmdShootHigh::Initialize()
+void cmdShoot::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void cmdShootHigh::Execute()
+void cmdShoot::Execute()
 {
 	ballShooter->Shoot(shootSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool cmdShootHigh::IsFinished()
+bool cmdShoot::IsFinished()
 {
 	return true;
 }
 
 // Called once after isFinished returns true
-void cmdShootHigh::End()
+void cmdShoot::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void cmdShootHigh::Interrupted()
+void cmdShoot::Interrupted()
 {
 
 }

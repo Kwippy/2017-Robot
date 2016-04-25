@@ -1,7 +1,7 @@
+#include <Commands/cmdShoot.h>
 #include "cmdgrpLoadandShoot.h"
 #include "Commands/Delay.h"
 #include "../Robotmap.h"
-#include "Commands/cmdShootHigh.h"
 #include "Commands/cmdShooterOff.h"
 #include "Commands/cmdServoDownPosition.h"
 #include "Commands/cmdServoFirePosition.h"
@@ -14,7 +14,7 @@ cmdgrpLoadandShoot::cmdgrpLoadandShoot()
 	AddSequential (new Delay(0.5));
 
 	//Spins up shooter motors
-	AddSequential (new cmdShootHigh(0.4));
+	AddSequential (new cmdShoot(0.4));
 	AddSequential (new Delay(2));
 
 	//Fires Ball

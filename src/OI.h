@@ -30,11 +30,14 @@ public:
 //Right JoyStick-----------------------------------------------
 
 	Joystick* getDriveStickR();
-	JoystickButton *climberExtend, *climberRetract, *moveClimberPistonUp, *moveClimberPistonDown;
-	JoystickButton *gyroReset, *stopAngleShooter;
+
+	JoystickButton *lockShooterUp, *lockShooterUp2;
+	JoystickButton *stopAngleShooter, *stopShooter;
+	JoystickButton *feederFeedFast, *shooterFireFast;
 	JoystickButton *angleShooterUp, *angleShooterDown;
 	JoystickButton *testServoUp, *testServoDown;
 
+	//JoystickButton *climberExtend, *climberRetract, *moveClimberPistonUp, *moveClimberPistonDown;
 
 
 //XBOX Controller----------------------------------------------

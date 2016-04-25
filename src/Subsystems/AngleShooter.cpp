@@ -18,6 +18,8 @@ void AngleShooter::InitDefaultCommand()
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
+//Positive values bring shooter up, negative values to the ground
+
 
 void AngleShooter:: AngleShoot(float AngleShooterSpeed)
 {
@@ -86,7 +88,8 @@ void AngleShooter::PreventBackDrive()
 
 		if((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)>=148)
 		{
-			AngleShooterBackDriveSpeed= (backDriveGain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)-(167)))+0.08;
+			//AngleShooterBackDriveSpeed= (backDriveGain*((((CommandBase::oi->getAngleShootEncoder()->GetVoltage())/0.001)*0.072)-(167)))+0.08;
+			AngleShooterBackDriveSpeed= 0.08;
 		}
 		else
 		{
