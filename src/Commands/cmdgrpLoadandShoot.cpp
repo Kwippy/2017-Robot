@@ -1,10 +1,10 @@
-#include <Commands/cmdShoot.h>
 #include "cmdgrpLoadandShoot.h"
 #include "Commands/Delay.h"
 #include "../Robotmap.h"
 #include "Commands/cmdShooterOff.h"
 #include "Commands/cmdServoDownPosition.h"
 #include "Commands/cmdServoFirePosition.h"
+#include <Commands/cmdShoot.h>
 
 cmdgrpLoadandShoot::cmdgrpLoadandShoot()
 {
